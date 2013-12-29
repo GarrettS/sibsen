@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+  <title>Sibsen</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <link href="img/massage.css" rel="stylesheet" type="text/css">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <style type="text/css">
+#banner img {
+    opacity: .999;
+    position: relative;
+    border: 0;
+    left: 0;
+}
+
+#banner {
+    position: relative;
+    border: 1px solid #5E667A;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: url("img/slide-1.jpg") no-repeat;
+    height: 474px;
+    width: 910px;
+}
+
+
+#banner .slide-2 {
+    -moz-transition: all 1s ;
+    -webkit-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    opacity: 0.01;
+    margin-left: 910px;
+    filter:progid:DXImageTransform.Microsoft.Fade(), 
+    filter:progid:DXImageTransform.Microsoft.Slide()
+}
+      
+#banner figcaption {
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    color: #f3f3ff;
+    display: block;
+    font-size: 36px;
+    opacity: .999;
+    text-shadow: rgba(39, 50, 54, .9) 0.08em 0.08em 0.1em;
+    filter:progid:DXImageTransform.Microsoft.DropShadow(OffX=1, OffY=1, 
+        Color='#273236', Positive='true');
+    background: rgba(215, 229, 233, .05);
+    padding: 4px 2px 8px 2px;
+}
+
+#longdesc {
+    background: #DFE4E6;
+    height: 100%;
+    height: 167px;
+    font-size: 12px;
+    left: 0px;
+    bottom: 0px; 
+    position: absolute;
+    padding: 11px;
+    opacity: .85;
+  </style>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    #nav {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+</head>
+<body>
+<script src="img/ape-ep-dom-min.js"></script>
+<script src="img/anim.js"></script>
+
+  <div id="contents"> 
+    <header>
+        <h1><a href="/">Sibsen</a></h1>
+        <p id="tagline">Heal and refresh your mind and body.</p>    
+    </header>
+    
+    <div id="nav">
+        <ul><li><a href="/services">Services</a> 
+            </li><li><a href="/about">About Me</a>
+            </li><li><a href="/contact">Contact</a> 
+        </li></ul>
+<a href="https://clients.mindbodyonline.com/ASP/home.asp?studioid=19428"  
+        >Book Song online</a>
+<strong>Nob Hill:</strong> (415) 806-6899, <strong>Marina:</strong> (415) 440-1263 (Ask for "Song") 
+    </div>
+  
+<figure id="banner" 
+    ><img src="img/slide-0.jpg" title="Relax.">
+<figcaption id="figcaption">Relax your mind and body</figcaption>
+<div id="longdesc">
+<p>
+My name is Boonsong Somjit (Song). I practice massage therapy in San Francisco. 
+<p>
+I have studied Western and Eastern massage styles both in Thailand and in the US. 
+I am still learning this ancient medicine. Our mind and body always have something to learn. 
+<p>
+Massage for me is another way to understand and treat the mind and body. 
+Especially in our materialistic urban society, we need massage for life.
+<p>
+To make an appointment, see the contact page. 
+</div>
+</figure>
+<footer>
+Lorem ipsum footer text...
+</footer>
+</div>
+
+    <script>
+(function() {
+    setTimeout(preloadImages, 100);
+        
+    var FRAME_PAUSE = 4000;
+    var banner = document.getElementById("banner"),
+        img = banner.firstChild,
+        transitionEnded,
+        imgList = [
+            { 
+              "name" : "Feather",
+              "caption" : document.getElementById("figcaption").firstChild.data,
+            },
+            { 
+              "name" : "tree",
+              "caption" : "Heal injuries",
+            },
+            {
+              "name" : "Flowering vine",
+              "caption" : "Alleviate back pain"
+            },
+            {
+              "name" : "Lagoon",
+              "caption" : "Strengthen mind-body connection"
+            },
+            {
+              "name" : "Rocks",
+              "caption" : "Enhance athletic performance"
+            },
+            { 
+              "name" : "Bridge",
+              "caption" : "Repair overused muscles"
+            }
+        ];
+    
+    var transitionEvent = getTransitionEvent();
+    
+    if(transitionEvent) {
+        transitionSetup();
+    } else {
+        //jsAnimSetup();
+    }
+    
+    function transitionSetup() {
+        img.addEventListener(transitionEvent, function() {
+            var img = this;
+            setTimeout(function() {
+                if(transitionEnded) return;
+                img.src = imgList[queuedImage].img.src;
+                img.className = "";
+                banner.style.backgroundImage = "url('" + imgList[nextImage].img.src + "')";
+                queuedImage = nextImage; 
+                transitionEnded = true;
+                setTimeout(
+                    function() {
+                        transitionEnded = false;
+                        rotateBanner();
+                    }, 
+                    FRAME_PAUSE);
+                
+            }, 74);
+        }, true);        
+    }
+    
+    function jsAnimSetup() {
+        var anim = APE.anim;
+        alert(anim);
+    }
+    
+    function rotateBanner() { 
+        swap(img, queuedImage);
+        nextImage = getNextImage();
+    }
+    
+    var lastImage = imgList.length - 1;
+    var queuedImage = 1;
+    var nextImage = getNextImage();
+    
+    function getNextImage() {
+        return queuedImage == imgList.length - 1 ? 0 : queuedImage + 1;
+    }
+    
+    function swap(img, queuedImage) {
+        if(transitionEvent) {
+            img.className = "slide-" + 2;
+        }
+        var banner = img.parentNode,
+            figCaption = banner.getElementsByTagName("figcaption")[0];
+            figCaption.firstChild.data = imgList[queuedImage].caption;
+    }
+    
+    function getTransitionEvent(){
+        var t,
+            style = document.createElement('b').style,
+            transitions = {
+          'transition':'transitionEnd',
+          'OTransition':'oTransitionEnd',
+          'MSTransition':'msTransitionEnd',
+          'MozTransition':'transitionend',
+          'WebkitTransition':'webkitTransitionEnd'
+        }
+    
+        for(t in transitions){
+            if(typeof style[t] !== "undefined"){
+                return transitions[t];
+            }
+        }
+        return"";
+    }    
+
+    function preloadImages() {
+        fetchImages();
+
+        var loadTimer = setInterval(imgListMostlyLoaded, 50);
+        var imgListMostlyLoadedHandler = function() {
+            setTimeout(rotateBanner, FRAME_PAUSE);
+        };
+        
+        function imgListMostlyLoaded() {
+            for(var i = 0; i < imgList.length -2; i++) {
+                if(!imgList[i].img.complete) {
+                    return;
+                }
+            }
+            clearInterval(loadTimer);
+            imgListMostlyLoadedHandler();
+        }
+            
+        function fetchImages() {
+            var i, img;
+            for(i = 0; i < imgList.length; i++) {
+                img = imgList[i].img = new Image();
+                img.src = "img/slide-"+i+".jpg";
+            }
+        }
+    }
+})();
+  </script>
+</body>
+</html>

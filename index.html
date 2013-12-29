@@ -1,0 +1,1062 @@
+<!doctype html>
+<html>
+<head>
+  <title>Sibsen</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <link href="img/massage.css" rel="stylesheet" type="text/css">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <style type="text/css">
+#banner-img {
+    position: absolute;
+    border: 0;
+    left: 0;
+    top: 0;
+    width: 910px;
+    height: 474px;
+    display: block !important;
+}
+
+#banner {
+    position: relative;
+    border-top: 1px solid #5E667A;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: url("img/slide-1.jpg") no-repeat;
+    height: 474px;
+    width: 910px;
+}
+
+#banner .slide {
+    -moz-transition: all 1.5s ;
+    -webkit-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    transition: all 1.5s;
+}
+
+#banner .slide-1 {
+    opacity: 0.2;
+    width: 1px;
+    left: 909px;
+}
+
+#banner .slide-2 {
+    opacity: 0.05;
+    left: 910px;
+}
+
+#banner .slide-3 {
+    width: 2730px;
+    height: 1422px;
+    opacity: 0.01;
+}
+
+#figcaption {
+    display: block;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0DD7E5E9, endColorstr=#0DD7E5E9).
+        progid:DXImageTransform.Microsoft.Alpha(Opacity=90)
+    background: rgba(215, 229, 233, .05);
+    opacity: .9;
+    color: #f3f3ff;
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    font-size: 36px;
+    text-shadow: rgba(39, 50, 54, .9) 0.08em 0.08em 0.1em,
+                rgba(215, 229, 233, 0.3) 3px 3px 5px;
+    /* Filter for old ID; no filter for IE9 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#11D7E5E9, endColorstr=#11D7E5E9);
+    background: rgba(215, 229, 233, .05);
+    padding: 3px 5px 9px 3px;
+}
+
+#figcaption span {
+    -moz-transition: opacity 1.2s ;
+    -webkit-transition: opacity 1.2s;
+    -ms-transition: opacity 1.2s;
+    -o-transition: opacity 1.2s;
+}
+
+#figcaption .faded {
+    opacity: 0.05;
+    -moz-transition: opacity .8s ;
+    -webkit-transition: opacity .8s;
+    -ms-transition: opacity .8s;
+    -o-transition: opacity .8s;
+}
+
+#longdesc {
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0DDFE4E6, endColorstr=#0DDFE4E6),
+        progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+    background: rgba(223, 228, 230, 0.5);
+    height: 100%;
+    font-size: 13.85px;
+    left: 0px;
+    bottom: 0px;
+    line-height: 1.6;
+    padding: 13px 10px 4px 10px;
+    margin:  0 0;
+    opacity: .85;
+    letter-spacing: -0.002em;
+}
+
+#banner-imgList {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+    padding: 0;
+    background: rgba(223, 228, 230, 0.2);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#40dfe4e6, endColorstr=#40dfe4e6);
+    font-size: 0px;
+    letter-spacing: 0px;
+    overflow: visible;
+    white-space: nowrap;
+    height: 32px;
+    cursor: default;
+}
+
+#banner-imgList li:hover .figure, 
+#banner-imgList li.activeLI .figure,
+
+#banner-imgList li.hover-li .figure,
+#banner-imgList li.activeLI:hover .figure {
+    background: rgba(223, 228, 230, .4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80dfe4e6, endColorstr=#66dfe4e6, GradientType=0);
+    
+    -moz-transition: background-color .45s;
+    -webkit-transition: background-color .45s;
+    -o-transition: background-color .45s;
+    -ms-transition: background-color .45s;
+    transition: background-color .45s;
+}
+
+#banner-imgList li.activeLI:hover .figure {
+    background: url("img/key_play_pause16x16.png") no-repeat 6px 16px;
+    background: rgba(223, 228, 230, .5) url("img/key_play_pause16x16.png") no-repeat 6px 16px;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80dfe4e6, endColorstr=#66dfe4e6, GradientType=0);
+}
+
+#banner-imgList li.current-autoplay-li {
+    background: rgba(223, 228, 230, .3);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#6Cdfe4e6, endColorstr=#5Fdfe4e6, GradientType=0);
+
+    -moz-transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    -ms-transition: background-color .5s;
+    transition: background-color .5s;
+}
+
+.figure {
+    font-size: 12px;
+    padding: 0 0 1px 0;
+    -moz-transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    -ms-transition: background-color .5s;
+    transition: background-color .5s;
+}
+
+#banner-imgList li {
+    line-height: 0;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 153px;
+    white-space: nowrap;
+    overflow: visible;
+    text-align: center;
+    padding: 1px 0;
+    text-shadow: rgb(243, 243, 255, .9) 0.08em 0.08em 0.1em;
+    color: rgb(39, 50, 54);
+    height: 28px;
+
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0DD7E5E9, endColorstr=#0DD7E5E9);
+    background: rgba(215, 229, 233, .05);
+    
+    -moz-transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    -ms-transition: background-color .5s;
+    transition: background-color .5s;
+}
+
+#banner-imgList li span.caption {
+    opacity: 0.01;
+    display: block;
+    width: 100%;
+    letter-spacing: normal;
+    margin-top: -14px;
+    line-height: 14px;
+    height: 14px;
+    text-indent: 1px;
+
+    -moz-transition: opacity .5s;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+#banner-imgList #Lagoon {
+    width: 181px;
+    margin-left: -1.5px;
+}
+
+#banner-imgList #Flowering-vine {
+    width: 121px;
+}
+
+#banner-imgList #Bridge {
+    width: 148px;
+}
+
+#banner-imgList #Rocks {
+    width: 162px;
+}
+
+#banner-imgList li:hover span.caption,
+
+#banner-imgList li.activeLI span.caption {
+    line-height: normal;
+    opacity: .999;
+    font-size: 11.49px;
+    background: rgba(223, 228, 230, .6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#bbdfe4e6, endColorstr=#bbdfe4e6);
+    letter-spacing: normal;
+
+    -moz-transition: opacity .6s;
+    -webkit-transition: opacity .6s;
+    -o-transition: opacity .6s;
+    -ms-transition: opacity .6s;
+    transition: opacity .6s;
+}
+
+#banner-imgList img {
+    height: 24px;
+    width: 46px;
+    display: block;
+    margin: auto;
+    visibility: visible;
+    border-radius: 9px;
+    margin-top: 2px;
+}
+
+.banner-infobox {
+    color: #111;
+    height: 360px;
+    opacity: 0.01;
+    position: absolute;
+    right: 6px;
+    top: -395px;
+    line-height: 1.6em;
+    padding-bottom: 8px;
+    font-size: 14px;
+    width: 0;
+
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZTFkOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(232,225,217,1) 10%, rgba(255,255,255, 0.2) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(232,225,217,1)), color-stop(100%,rgba(255,255,255, 0.2))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e1d9', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
+
+    white-space: normal;
+    line-height: 1.2em;
+
+    text-align: left;
+    
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition:  all 1s;
+}
+
+
+.banner-infobox h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 8px 8px 8px;
+    color: inherit;
+    padding: 1px;
+    white-space: nowrap;
+    text-align: center;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#60273236, endColorstr=#50273236);
+    background: rgba(232,225,217, .2);
+}
+
+.banner-infobox p {
+    margin: 8px;
+    font-size: 13px;
+    line-height: 1.3;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#22e8e1d9, endColorstr=#22e8e1d9);
+    background: rgba(232,225,217, .08);
+}
+.shown-infobox {
+    opacity: 1;
+    width: 214px;
+    
+    -moz-transition: opacity 1.5s ease-out;
+    -webkit-transition: opacity 1.5s ease-out;
+    -o-transition: opacity 1.5s ease-out;
+    -ms-transition: opacity 1.5s ease-out;
+    transition: opacity 1.5s ease-out;
+}
+
+#banner-infobox-1 {
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FhYjBiNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhYWIwYjciIHN0b3Atb3BhY2l0eT0iMC4yIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top,  rgba(170,176,183,1) 0%, rgba(170,176,183,0.2) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(170,176,183,1)), color-stop(100%,rgba(170,176,183,0.2))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aab0b7', endColorstr='#33aab0b7',GradientType=0 ); /* IE6-8 */
+}
+
+#banner-infobox-1 h3 {
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#26aab0b7, endColorstr=#26aab0b7);
+    background: rgba(170,176,183, .15);
+
+}
+
+
+#banner-infobox-5 {
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI0MzkxMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(36,57,18,1) 0%, rgba(255,255,255,0) 150%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(36,57,18,1)), color-stop(150%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
+    color: #e8d4c9;
+}
+
+#banner-infobox-5 h3 {
+    background: rgba(36,57,18,  .2);
+}
+
+#banner-infobox-5 p {
+    background: rgba(36,57,18,  .1);
+}
+</style>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    #nav, #contents * {
+       filter: none !important;
+    }
+  </style>
+<![endif]-->
+
+<!--[if lte IE 8]>
+  <style type="text/css">
+#banner-imgList li .caption {
+   margin: 0;
+   position: relative;
+}
+
+.figure {
+    position: relative;
+}
+  
+#banner-imgList li {
+    background-image: url("img/dot_clear.gif");
+}
+
+#banner-captext {
+    filter: progid:DXImageTransform.Microsoft.Chroma(Color=black),
+	    progid:DXImageTransform.Microsoft.DropShadow(OffX=3, OffY=3, Color=#99111f22);
+    background: black;
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+    margin: -10px 0 -10px 0;
+}
+  </style>
+<![endif]-->
+
+<!-- [if lte IE 7]>
+#banner-imgList li:hover span.caption {
+    background: rgb(223, 228, 230);
+}
+<![endif]-->
+</head>
+<body>
+
+  <div id="contents"> 
+    <div id="header">
+        <h1><a href="/">Sibsen</a></h1>
+        <p id="tagline">Rejuvenate your mind and body.</p>    
+    </div>
+    
+    <div id="nav">
+        <ul><li><a href="/" class="current">Home</a>
+	    </li><li><a href="/services">Services</a> 
+            </li><li><a href="/about">About Me</a>
+            </li><li><a href="/contact">Contact</a> 
+        </li></ul>
+    </div>
+  
+    <div id="banner" 
+        ><img src="img/slide-0.jpg" alt="Relax your mind and body" id="banner-img">
+        <div id="figcaption" class="img-caption"><span id='banner-captext'>Relax your mind and body</span></div>
+        
+        <ul id="banner-imgList">
+            <li title="Feather">
+                <div class="figure"
+                    ><span class="caption">Relax your mind and body</span> 
+                    <img id='slide-0' src="img/slide-0.jpg" alt="Feather">
+                    <div class="banner-infobox" id="banner-infobox-0">
+                    <h3>Relaxation</h3>
+                    <p>
+                      <strong>Style:</strong> Swedish or light Thai. 
+                    
+                    <p>This is the perfect massage if you're looking to unwind or relax attention, 
+                      decrease anxiety increase confidence. 
+                    </p>
+                    </div>
+                </div>
+            </li>
+            <li title="Tree">
+                <div class="figure"
+                    ><span class="caption">Help the body to heal itself</span>
+                    <img id='slide-1' src="img/slide-1.jpg" alt="Tree">
+                    <div class="banner-infobox" id="banner-infobox-1">
+                    <h3>Healing
+                    </h3>
+                    <p>
+                    <strong>Description:</strong> Thai massage can be used to focus on sports-related problems, 
+                    to increase resting muscle length, increase blood flow, attenuate 
+                    muscular imbalance, and even to increase bone mineral density.
+                    </p>
+                    </div>
+                </div>
+            </li>
+            <li title="Flowering vine" id="Flowering-vine">
+                <div class="figure"
+                    ><span class="caption">Alleviate back pain</span>
+                    <img id='slide-2' src="img/slide-2.jpg" alt="Flowering vine">
+                    <div class="banner-infobox" id="banner-infobox-2">
+                        <h3>Swedish Massage</h3>
+                        <p>
+                        <strong>Relax the back:</strong> Swedish Massage uses long, soothing 
+                        strokes reduce blood pressure, increase circulation, and lower stress.
+                        The perfect massage to unwind or relax your tensions. 
+                        </p>
+                        <p>
+                        <h3>Sport, Thai, Island</h3>
+                        <p><strong>For deep back pain:</strong>. The symptoms of deep back soreness 
+                        can be treated with deep work such Sport, Thai, and Island massage. 
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li title="Lagoon" id="Lagoon">
+                <div class="figure"
+                    ><span class="caption">Strengthen mind-body connection</span>
+                    <img id='slide-3' src="img/slide-3.jpg" alt="Lagoon">
+                    <div class="banner-infobox" id="banner-infobox-3">
+                    <h3>
+                        Jop Sen
+                    </h3>
+                    <p>
+                    <strong>Description:</strong> Stimulation along energy lines  
+                    improves fine motor skills. 
+                    </p>
+                    </div>
+                </div>
+            </li>
+            <li title="Rocks" id="Rocks">
+                <div class="figure"
+                    ><span class="caption">Enhance athletic performance</span>
+                    <img id='slide-4' src="img/slide-4.jpg" alt="Rocks">
+                    <div class="banner-infobox" id="banner-infobox-4">
+                        <h3>Deep Swedish &amp; Island</h3>
+                        <p>
+                            <strong>Description:</strong> Island Style massage is the Thai equivalent of Deep Swedish Massage.
+                        </p>
+                        <p>
+                            <strong>Benefits:</strong> Endorphin release, relaxation, circulation, 
+                            and healing. 
+                        </p>
+                        <p>
+                            <dfn>Thai Yoga Massage</dfn> and <dfn>Jop Sen</dfn> may also be 
+                            used to increase flexibility.
+                        </p>
+                        <p>
+                            <strong>Tip:</strong> Each sport uses different muscle groups. 
+                            For the best massage results, tell me how you use your body.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li title="Bridge" id="Bridge">
+                <div class="figure"
+                    ><span class="caption">Repair overused muscles</span>
+                    <img id='slide-5' src="img/slide-5.jpg" alt="Bridge">
+                    <div class="banner-infobox" id="banner-infobox-5"
+                    >
+                    <h3>Deep Tissue &amp; Thai Massage</h3>
+                    <p>
+                        <strong>Origin:</strong> Thai and Chinese massage.</p>
+                    <p>
+                        <strong>Benefits:</strong> 
+                        Release myofascial  tension of overused and knotted muscles, helping the body to heal 
+                        itself. Fingers, hands, elbows and feet are used. 
+                    </p>
+                     </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <p id="longdesc">
+        <dfn>Sibsen</dfn> refers to ten main energy lines in Thai masssage.
+        When the energy is stuck and the body is not working properly, discomfort and health 
+        problems ensue. Massage is used to address each individual's needs and problems,
+        helping to maintain optimal health, vitality, and happiness. It is another way
+        to understand and treat the mind and body.
+        Especially in our materialistic urban society, we need massage for life.
+    </p>
+    <div id="footer">
+        <a id="book" href="https://clients.mindbodyonline.com/ASP/home.asp?studioid=19428"  
+                >Book Song online</a>
+        <strong>Nob Hill:</strong> (415) 806-6899, <strong>Presidio:</strong> (415) 441-1777 (Ask for "Song") 
+    </div>
+
+</div>
+<script src="img/ape-ep-dom-anim.js" id="script-library"></script>
+
+<script>
+"use strict";
+
+(function() {
+var transitionSet = [{
+            "opacity" : 0.02,
+            "left" : '910px'
+        },
+        {
+            "opacity" : "0.2",
+            "width" : "1px",
+            "left" : "909px"
+        },
+        {
+            "width" : "2730px",
+            "height" : "1422px",
+            "opacity" : "0.01"
+        }
+    ];
+
+var activeInfobox = null,
+    dom = APE.dom;
+    
+function hideActiveInfobox() {
+    if (!activeInfobox) return;
+    dom.removeClass(activeInfobox, "shown-infobox");
+    activeInfobox = null;
+}
+
+var config = { 
+    delay: 4000, 
+    transitions : transitionSet,
+    onslideselected : function(index) {
+        hideActiveInfobox();
+    },
+    
+    onselectedslidedone : function (index) {
+            hideActiveInfobox();
+            var infobox = document.getElementById("banner-infobox-" + index);
+            dom.addClass(infobox, "shown-infobox");
+            activeInfobox = infobox;
+    },
+    
+    onresumeautoplay : function() {
+        hideActiveInfobox();
+    }
+    
+};
+
+createCycle("banner", config);
+
+})();
+
+function createCycle(id, config) {
+    
+    var FRAME_PAUSE = config.delay,
+        transitionSet = config.transitions;
+        
+    var APE = window.APE,
+        dom = APE.dom, 
+        anim = APE.anim;
+
+    config = fillInConfig();
+
+    var jsTransition,
+        jsTransitionSet,
+        banner = document.getElementById(id),
+        captext = document.getElementById(id + "-captext"),
+        bannerImage = document.getElementById(id + "-img"), 
+        bannerImageList = document.getElementById(id + "-imgList"),
+        bannerImageLIs = bannerImageList.getElementsByTagName("li"),
+        bannerImgs = bannerImageList.getElementsByTagName("img"),
+        
+        // transition end fires for each CSS property affected, 
+        // so we must track when the event is actually done.
+        transitionEnded = true,
+        nextTransitionTimer,
+        
+        autoplay = false,
+        startSlideshowTimer,
+        
+        imgList = buildImageList(), 
+        initialTime = +new Date,
+        loadDuration = 0,
+        
+        activeLI,
+        clickedSlideData,
+        
+        noop = Function.prototype,
+        
+        // TODO: implement transition events or delete this entirely.
+        transitionEvent = 0;//getTransitionEvent();
+    
+    var imageIndex = {
+        last : imgList.length - 1,
+        next : 1,
+        current : 0,
+        setCurrentIndex : function(i) {
+            this.current = i;
+            this.next = (i == this.last) ? 0 : i + 1;
+        }
+    };
+
+    document.getElementById("banner-captext").onclick = function() {
+        if(autoplay || startSlideshowTimer) {
+            var currentLI = bannerImageLIs[imageIndex.current];
+            
+            clickedSlideData = {
+                li : currentLI,
+                index : imageIndex.current,
+                img : currentLI.getElementsByTagName("img")[0]
+            };
+            stopAutoplay();
+            slideSelected();
+        }
+    };
+
+    function fillInConfig() {
+        var defaultConfig = {
+            onslideselected : noop,
+            onselectedslidedone : noop,
+            onresumeautoplay : noop
+        };
+        return APE.createMixin(defaultConfig, config);
+    }
+    
+    function toCssString(obj) {
+        var classSelector = ".cycle-widget-css-override",
+            el = document.createElement("div"),
+            transitionProps = [],
+            style = el.style;
+        
+        var camelToHyphen = function(s) {
+            var re = /([A-Z]{1})/g;
+            return (camelToHyphen = function(s) {
+                return s.replace(re, function(m, ch) {
+                    return '-' + ch.toLowerCase()
+                });
+            })(s);
+        };
+
+        for(var prop in obj) {
+            style[prop] = obj[prop];
+            transitionProps.push(camelToHyphen(prop)); 
+        }
+        style[getTransitionEvent().cssProperty] = "1s ease-in-out all";
+        return classSelector + "{" + el.style.cssText + "}";        
+    }
+    
+    var cueList = new function(len) {
+        var list = new Array(len),
+            current = 0, 
+            next = 1;
+
+        function peek() {
+            return next;
+        }
+        
+        function getNext() {
+            next = (next == len -1) ? 0 : next + 1;
+            current = (current == len -1) ? 0 : current + 1;
+            return current;
+        }
+        
+        function getCurrent() {
+            return current;
+        }
+        
+        function setCurrent(i) {
+            current = i;
+            next = (next == len -1) ? 0 : next + 1;
+        }
+        
+        list.current = getCurrent;
+        list.peek = peek;
+        list.next = getNext;
+        list.setCurrent = setCurrent;
+        return list;
+    }(imgList.length);
+        
+    setImagesLoadedHandler(imagesLoaded);
+    
+    bannerImageList.onclick = bannerImageListClickHandler;
+    
+    function bannerImageListClickHandler(ev) {
+        var target = dom.Event.getTarget(ev);
+        clickedSlideData = findSlide(target);
+        if(clickedSlideData) {
+            if(transitionEnded) {
+                slideClickHandler();
+            } else {
+                stopAutoplay();
+                setActiveListItem();
+            }
+        }
+    }
+    
+    function slideClickHandler() {
+        if(clickedSlideData.li == activeLI) {
+            toggleAutoplay();
+        } else {
+            stopAutoplay();
+            slideSelected(clickedSlideData);
+        }
+    }
+    
+    function findSlide(target) {
+        var img, li, index, 
+            infoboxClass = id + "-infobox";
+            
+        if(dom.hasClass(target, infoboxClass) || 
+            dom.findAncestorWithClass(target, infoboxClass, imgList)){
+            return null;
+        }
+        
+        if(target.tagName == "IMG") {
+            img = target;
+        }
+        li = target.tagName == "LI" ? target : 
+            dom.findAncestorWithTagName(target, "LI", imgList);
+  
+        if(!li) return null;
+        
+        if(!img) {
+            img = li.getElementsByTagName("img")[0];
+        }
+        index = +img.src.match(/slide-(\d+)/)[1];
+        return { img : img, li : li, index : index };
+    }
+    
+    function toggleAutoplay() {
+        var isStarted = !startSlideshowTimer;
+        if(isStarted && !transitionEnded) {
+            return;
+        }
+
+        if(autoplay) {
+            stopAutoplay();
+            slideSelected(clickedSlideData);
+        } else {
+            resumeAutoplay();
+        }
+    }
+    
+    function slideSelected() {
+        unsetCurrentAutoplayLI();
+        
+        var selectedIndex = clickedSlideData.index,
+            isCurrentSlideSelected = selectedIndex == imageIndex.current;
+        
+        if(isCurrentSlideSelected) {
+            setActiveListItem();
+        } else {
+            transitionToClickedImage();
+        }
+        config.onslideselected(selectedIndex);
+        if(isCurrentSlideSelected) {
+            config.onselectedslidedone(selectedIndex);
+        }
+    }
+    
+    function transitionToClickedImage() {
+        var index = clickedSlideData.index;
+        changeBg(index);
+        transitionImg(index);
+        imageIndex.next = index;
+        setActiveListItem();
+    }
+    
+    function resumeAutoplay() {
+        autoplay = true;
+        if(activeLI) {
+            dom.removeClass(activeLI, "activeLI");
+        }
+        activeLI = null;
+        if(transitionEnded) {
+            setCurrentAutoplayLI();
+            transitionToNextImage();
+            config.onresumeautoplay();
+        }
+    }
+    
+    function setActiveListItem() {
+        if(clickedSlideData && activeLI == clickedSlideData.li) return;
+        
+        if(activeLI) {
+            dom.removeClass(activeLI, "activeLI");
+        }
+        dom.addClass(clickedSlideData.li, "activeLI");
+        activeLI = clickedSlideData.li;
+    }
+    
+    function stopAutoplay() {
+        startSlideshowTimer = clearTimeout(startSlideshowTimer);
+        autoplay = false;
+        clearTimeout(nextTransitionTimer);
+    }
+    
+    /** State dispatch, based on state of autoplay and 
+     * state of being in transition.  */
+    function jsTransitionDoneDispatch(ev) {
+        var callback;
+        if(autoplay) {
+            callback = jsTransitionAutoplayOnEndHandler;
+        } else {
+            callback = selectedTransitionDoneHandler;
+        }
+        transitionEnded = true;
+        callback.call(this, ev);
+    }
+    
+    // Done with transition of first CSS property means 
+    // done with transitioning of all CSS properties (opacity, width, left, etc).
+    var transitionEndEventFired;
+    function nativeTransitionDoneDispatch(ev) {
+        if(transitionEndEventFired) return;
+        jsTransitionDoneDispatch();
+        transitionEndEventFired = true;
+    }
+    
+    function imagesLoaded() {
+        loadDuration = new Date - initialTime;
+        var delay = FRAME_PAUSE - loadDuration;
+        startSlideShowAfter(delay);
+    }
+
+    if(transitionEvent) {
+        transitionSetup();
+    } else {
+        jsAnimSetup();
+    }
+
+    function jsAnimSetup() {            
+        styleTransitionSetup();
+    }
+    
+    function styleTransitionSetup() {
+        jsTransitionSet = createJsTransitionSet(transitionSet);
+        jsTransition = jsTransitionSet[2];
+                
+        function createJsTransitionSet(transitionSet) {
+            var i = transitionSet.length,
+                jsTransitionSet = new Array(i);
+            while(i--) {
+                jsTransitionSet[i] = makeTransition(transitionSet[i]);
+                jsTransitionSet[i].onend = jsTransitionDoneDispatch;
+            }
+            return jsTransitionSet;
+        }        
+    }
+    
+    function jsTransitionAutoplayOnEndHandler() {
+        updateUI(imageIndex.next);
+        imageIndex.next = nextBackgroundImage; 
+        nextTransitionTimer = setTimeout(transitionToNextImage, FRAME_PAUSE);
+        jsTransition && jsTransition.reset();
+    }
+
+    function transitionSetup() {
+        bannerImage.addEventListener(transitionEvent, nativeTransitionDoneDispatch, false);
+    }
+    
+    function setCurrentAutoplayLI() {
+        var curLI = bannerImageLIs[imageIndex.current];
+        if(curLI) {
+            dom.addClass(curLI, "current-autoplay-li");
+        }  
+    }
+    
+    function transitionToNextImage() {
+        transitionEnded = false;
+        changeBg(imageIndex.next);
+        rotateBanner();
+    }
+    
+    function resetTransition() {
+        jsTransition && jsTransition.reset();
+        bannerImage.className = "";
+    }
+        
+    function selectedTransitionDoneHandler(ev) {
+        var isCued = imageIndex.current != clickedSlideData.index;
+        if(isCued) {
+            updateUI(imageIndex.current);
+            setTimeout(transitionToClickedImage, 1);
+        } else {
+            console.log(11)
+            config.onselectedslidedone(clickedSlideData.index);
+            updateUI(clickedSlideData.index);
+        }
+    }
+    
+    function updateUI(index) {
+        changeCaptext(index);
+        changeImg(index);
+        
+        // Does not belong here.
+        imageIndex.setCurrentIndex(index);
+        transitionEnded = true;
+    }
+    
+    function changeImg (next) {
+        // Google Chrome will re-render previous image in new image's position 
+        // before updating the src. To fix that, we change the src 
+        // then set the className (change position) before updating .src, 
+        // using setTimeout. 
+        bannerImage.src = imgList[next].src;
+        resetTransition();
+    }
+    
+    function changeBg(index) {
+        banner.style.backgroundImage = "url('" + imgList[index].src + "')";
+    }
+    
+    function changeCaptext(index) {
+        captext.className = "";
+        captext.firstChild.data = imgList[index].caption;
+    }
+    
+    function startSlideShowAfter(delay) {
+        setCurrentAutoplayLI();
+        startSlideshowTimer = setTimeout(rotateBanner, Math.max(delay, 1));
+    }
+    
+    var nextBackgroundImage = getNextBackgroundImage();
+    
+    function rotateBanner() {
+        autoplay = true;
+        startSlideshowTimer = 0;
+        unsetCurrentAutoplayLI();
+        transitionImg(imageIndex.next);
+        setCurrentAutoplayLI();
+        nextBackgroundImage = getNextBackgroundImage();
+    }
+    
+    function unsetCurrentAutoplayLI() {
+        var currentLI = bannerImageLIs[imageIndex.current];
+        if(currentLI) {
+            dom.removeClass(currentLI, "current-autoplay-li");
+        }
+    }
+
+    function getNextBackgroundImage() {
+        return imageIndex.next == imgList.length - 1 ? 0 : imageIndex.next + 1;
+    }
+    
+    function transitionImg(index) {
+        var transitionToPerform = index % 3;
+        
+        transitionEnded = false;
+        transitionEndEventFired = false;
+        captext.className = "faded";
+        imageIndex.current = index;
+        if(transitionEvent) {
+            bannerImage.className = "slide slide-" + (transitionToPerform + 1);
+
+        } else {
+            jsTransition = jsTransitionSet[transitionToPerform];
+            jsTransition.start();
+        }
+    }
+
+    function makeTransition(properties) {
+        return new anim.StyleTransition(id + "-img", 
+                properties, 1, anim.Transitions.easeInEaseOut);
+    }
+    
+    function getTransitionEvent() {
+        var t,
+            style = document.createElement('b').style,
+            transitions = {
+          'transition':'transitionEnd',
+          'OTransition':'oTransitionEnd',
+          'MSTransition':'msTransitionEnd',
+          'MozTransition':'transitionend',
+          'WebkitTransition':'webkitTransitionEnd'
+        };
+    
+        for(t in transitions){
+            if(typeof style[t] !== "undefined"){
+                return { 
+                    cssProperty : t, 
+                    toString: function(){ return transitions[t]; }
+                };
+            }
+        }
+        return"";
+    }    
+
+    function setImagesLoadedHandler(imagesLoaded) {
+
+        var loadTimer = setInterval(imgListMostlyLoaded, 200);
+        
+        function imgListMostlyLoaded() {
+            for(var i = 0; i < imgList.length -2; i++) {
+                if(!bannerImgs[i].complete) {
+                    return;
+                }            }
+            clearInterval(loadTimer);
+            imagesLoaded();
+        }
+    }
+    
+    function buildImageList() {
+        var imgList = [],
+            img,
+            parent,
+            caption,
+            len = imgList.length = bannerImgs.length;
+        for(var i = 0; i < len; i++) {
+            img = bannerImgs[i];
+            parent = img.parentNode;
+            caption = parent.firstChild[dom.TEXT_CONTENT] || "";
+            imgList[i] = { 
+                name : img.alt,
+                caption : caption,
+                src : img.src
+            };
+        }
+        imgList.last = len - 1;
+        return imgList;
+    }
+}
+</script>
+</body>
+</html>

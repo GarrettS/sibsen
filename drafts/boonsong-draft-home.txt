@@ -1,0 +1,29 @@
+
+Navigation: What pages you want to have? We have discussed 1) page about yourself, 2) page about thai massage, 3) contact page. Perhaps also a page more about who you are (i.e. "about me" or "personal"), to delve into you, your beliefs, interests, where you are from, etc.
+
+And so such navigation, from the home page, would look like: 
+
+| Home | [About Thai Massage] | [Personal] | [Contact] 
+
+Nav can go below a header and above the content as a draft template like so:
+[header]
+[nav]
+[content]
+[footer]
+
+Header: 
+The header would be your name and perhaps a pic of something peaceful (nature, buddhism, etc).
+
+Contents:
+The home page should state what you do; possibly more. It should be as simple and to the point. 
+
+Fleshing it out as a first draft homepage, based on the draft template:
+
+| Boonsong Somjit, CMT [nature pic]
+|
+| Home | [About Thai Massage] | [Personal] | [Contact] 
+|
+| [picture of Boonsong] 
+| 
+| Thai, Swedish, deep tissue, aroma, pregnancy, sports, 
+| body stretching and ROM
