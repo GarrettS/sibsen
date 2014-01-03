@@ -2,7 +2,9 @@
   font-family: 'Dancing Script';
   font-style: normal;
   font-weight: normal;
-  src: local('Dancing Script'), local('DancingScript'), url('dancing-script.woff') format('woff');
+  src: url('dancing-script.eot');
+  src: url('dancing-script.eot.eot?#iefix') format('embedded-opentype'),
+  local('Dancing Script'), url('dancing-script.woff') format('woff');
 }
 
 ::-moz-selection {
