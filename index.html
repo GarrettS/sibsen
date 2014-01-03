@@ -1049,7 +1049,8 @@ function createCycle(id, config) {
         for(var i = 0; i < len; i++) {
             img = bannerImgs[i];
             parent = img.parentNode;
-            caption = parent.firstChild[dom.TEXT_CONTENT] || "";
+            caption = parent.parentNode.title || "";
+            debugger;
             imgList[i] = { 
                 name : img.alt,
                 caption : caption,
