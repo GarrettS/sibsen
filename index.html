@@ -113,7 +113,7 @@
     letter-spacing: 0px;
     overflow: visible;
     white-space: nowrap;
-    height: 32px;
+    height: 67px;
     cursor: default;
 }
 
@@ -152,6 +152,10 @@
 .figure {
     font-size: 12px;
     padding: 0 0 1px 0;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+
     -moz-transition: background-color .5s;
     -webkit-transition: background-color .5s;
     -o-transition: background-color .5s;
@@ -170,7 +174,7 @@
     padding: 1px 0;
     text-shadow: rgb(243, 243, 255, .9) 0.08em 0.08em 0.1em;
     color: rgb(39, 50, 54);
-    height: 28px;
+    height: 65px;
 
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0DD7E5E9, endColorstr=#0DD7E5E9);
     background: rgba(215, 229, 233, .05);
@@ -188,10 +192,13 @@
     width: 100%;
     letter-spacing: normal;
     margin-top: -14px;
-    line-height: 14px;
+    line-height: 15px;
     height: 14px;
     text-indent: 1px;
-
+    font-size: 11.4px;
+    position: relative;
+    top: -1px;
+    padding-bottom: 1px;
     -moz-transition: opacity .5s;
     -webkit-transition: opacity .5s;
     -o-transition: opacity .5s;
@@ -200,28 +207,22 @@
 }
 
 #banner-imgList #Lagoon {
-    width: 181px;
-    margin-left: -1.5px;
+   
 }
 
 #banner-imgList #Flowering-vine {
-    width: 121px;
 }
 
 #banner-imgList #Bridge {
-    width: 148px;
 }
 
 #banner-imgList #Rocks {
-    width: 162px;
 }
 
 #banner-imgList li:hover span.caption,
 
 #banner-imgList li.activeLI span.caption {
-    line-height: normal;
     opacity: .999;
-    font-size: 11.49px;
     background: rgba(223, 228, 230, .6);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#bbdfe4e6, endColorstr=#bbdfe4e6);
     letter-spacing: normal;
@@ -234,13 +235,13 @@
 }
 
 #banner-imgList img {
-    height: 24px;
-    width: 46px;
+    height: 46.5px;
+    width: 89px;
     display: block;
     margin: auto;
     visibility: visible;
     border-radius: 9px;
-    margin-top: 2px;
+    margin-top: 7px;
 }
 
 .banner-infobox {
@@ -410,9 +411,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
         <div id="figcaption" class="img-caption"><span id='banner-captext'>Relax your mind and body</span></div>
         
         <ul id="banner-imgList">
-            <li title="Feather">
-                <div class="figure"
-                    ><span class="caption">Relax your mind and body</span> 
+            <li title="Relax your mind and body">
+                <div class="figure">
                     <img id='slide-0' src="img/slide-0.jpg" alt="Feather">
                     <div class="banner-infobox" id="banner-infobox-0">
                     <h3>Relaxation</h3>
@@ -425,9 +425,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Tree">
-                <div class="figure"
-                    ><span class="caption">Help the body to heal itself</span>
+            <li title="Help the body to heal itself">
+                <div class="figure">
                     <img id='slide-1' src="img/slide-1.jpg" alt="Tree">
                     <div class="banner-infobox" id="banner-infobox-1">
                     <h3>Healing
@@ -440,9 +439,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Flowering vine" id="Flowering-vine">
-                <div class="figure"
-                    ><span class="caption">Alleviate back pain</span>
+            <li title="Alleviate back pain" id="Flowering-vine">
+                <div class="figure">
                     <img id='slide-2' src="img/slide-2.jpg" alt="Flowering vine">
                     <div class="banner-infobox" id="banner-infobox-2">
                         <h3>Swedish Massage</h3>
@@ -459,9 +457,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Lagoon" id="Lagoon">
-                <div class="figure"
-                    ><span class="caption">Strengthen mind-body connection</span>
+            <li title="Strengthen mind-body connection" id="Lagoon">
+                <div class="figure">
                     <img id='slide-3' src="img/slide-3.jpg" alt="Lagoon">
                     <div class="banner-infobox" id="banner-infobox-3">
                     <h3>
@@ -483,9 +480,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Rocks" id="Rocks">
-                <div class="figure"
-                    ><span class="caption">Enhance athletic performance</span>
+            <li title="Enhance athletic performance" id="Rocks">
+                <div class="figure">
                     <img id='slide-4' src="img/slide-4.jpg" alt="Rocks">
                     <div class="banner-infobox" id="banner-infobox-4">
                         <h3>Deep Swedish &amp; Island</h3>
@@ -507,9 +503,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Bridge" id="Bridge">
-                <div class="figure"
-                    ><span class="caption">Repair overused muscles</span>
+            <li title="Repair overused muscles" id="Bridge">
+                <div class="figure">
                     <img id='slide-5' src="img/slide-5.jpg" alt="Bridge">
                     <div class="banner-infobox" id="banner-infobox-5"
                     >
