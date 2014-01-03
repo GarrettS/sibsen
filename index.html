@@ -19,7 +19,6 @@
 #banner {
     position: relative;
     border-top: 1px solid #5E667A;
-    overflow: hidden;
     margin: 0;
     padding: 0;
     background: url("img/slide-1.jpg") no-repeat;
@@ -117,6 +116,7 @@
     cursor: default;
 }
 
+
 #banner-imgList li:hover .figure, 
 #banner-imgList li.activeLI .figure,
 
@@ -136,6 +136,38 @@
     background: url("img/key_play_pause16x16.png") no-repeat 4px 18px;
     background: rgba(223, 228, 230, .5) url("img/key_play_pause16x16.png") no-repeat 4px 18px;
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80dfe4e6, endColorstr=#66dfe4e6, GradientType=0);
+}
+
+
+
+li[title]:hover::after {
+  content: attr(title);
+  padding: 3px 8px;
+  color: #333;
+  position: relative;
+
+  display: table;
+  top: -90px;
+  margin: auto;
+  font-size: 14px;
+  line-height: normal;
+  white-space: nowrap;
+  z-index: 20;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0px 0px 4px #123;
+  -webkit-box-shadow: 0px 0px 4px #123;
+  box-shadow: 0px 0px 4px #222;
+  background-image: -moz-linear-gradient(top, rgb(247, 249, 249), rgb(157, 163, 178) );
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgb(215,229,233)),color-stop(1, #cccccc));
+  background-image: -webkit-linear-gradient(top, rgb(215,229,233), rgb(215, 229, 233));
+  background-image: -ms-linear-gradient(top,rgb(215,229,233), #cccccc);
+  background-image: -o-linear-gradient(top, rgb(215,229,233), #cccccc);
+}
+
+#Bridge[title]:hover::after {
+  margin-left: -24px;
 }
 
 #banner-imgList li.current-autoplay-li {
@@ -167,7 +199,7 @@
     line-height: 0;
     display: inline-block;
     vertical-align: bottom;
-    width: 153px;
+    width: 152px;
     white-space: nowrap;
     overflow: visible;
     text-align: center;
@@ -206,17 +238,8 @@
     transition: opacity .5s;
 }
 
-#banner-imgList #Lagoon {
-   
-}
-
-#banner-imgList #Flowering-vine {
-}
-
-#banner-imgList #Bridge {
-}
-
-#banner-imgList #Rocks {
+#banner-imgList #Bridge, #banner-imgList #Flowering-vine  {
+    width: 151px;
 }
 
 #banner-imgList li:hover span.caption,
@@ -240,8 +263,8 @@
     display: block;
     margin: auto;
     visibility: visible;
-    border-radius: 9px;
-    margin-top: 7px;
+    border-radius: 10px;
+    margin-top: 8px;
 }
 
 .banner-infobox {
@@ -406,11 +429,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
     </div>
   
     <div id="banner" 
-        ><img src="img/slide-0.jpg" alt="Relax your mind and body" id="banner-img">
-        <div id="figcaption" class="img-caption"><span id='banner-captext'>Relax your mind and body</span></div>
+        ><div style="position: absolute; overflow: hidden;height: 474px; width: 910px"
+        ><img src="img/slide-0.jpg" alt="Relax your mind and body" id="banner-img"></div
+        ><div id="figcaption" class="img-caption"><span id='banner-captext'>Relax your mind and body</span></div>
         
         <ul id="banner-imgList">
-            <li title="Relax your mind and body">
+            <li title="Relax your mind and body" id="Feather">
                 <div class="figure">
                     <img id='slide-0' src="img/slide-0.jpg" alt="Feather">
                     <div class="banner-infobox" id="banner-infobox-0">
@@ -923,7 +947,6 @@ function createCycle(id, config) {
             updateUI(imageIndex.current);
             setTimeout(transitionToClickedImage, 1);
         } else {
-            console.log(11)
             config.onselectedslidedone(clickedSlideData.index);
             updateUI(clickedSlideData.index);
         }
