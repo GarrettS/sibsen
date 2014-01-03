@@ -140,8 +140,8 @@
 
 
 
-li[title]:hover::after {
-  content: attr(title);
+li[data-title]:hover::after {
+  content: attr(data-title);
   padding: 3px 8px;
   color: #333;
   position: relative;
@@ -159,14 +159,14 @@ li[title]:hover::after {
   -moz-box-shadow: 0px 0px 4px #123;
   -webkit-box-shadow: 0px 0px 4px #123;
   box-shadow: 0px 0px 4px #222;
-  background-image: -moz-linear-gradient(top, rgb(247, 249, 249), rgb(157, 163, 178) );
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgb(215,229,233)),color-stop(1, #cccccc));
-  background-image: -webkit-linear-gradient(top, rgb(215,229,233), rgb(215, 229, 233));
-  background-image: -ms-linear-gradient(top,rgb(215,229,233), #cccccc);
-  background-image: -o-linear-gradient(top, rgb(215,229,233), #cccccc);
+  background-image: -moz-linear-gradient(top, rgb(247, 249, 249), rgb(215, 229, 233));
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgb(215,229,233)),color-stop(1, rgb(215, 229, 233)));
+  background-image: -webkit-linear-gradient(top, rgb(247, 249, 249), rgb(215, 229, 233));
+  background-image: -ms-linear-gradient(top, rgb(247, 249, 249), rgb(215, 229, 233));
+  background-image: -o-linear-gradient(top, rgb(247, 249, 249), rgb(215, 229, 233));
 }
 
-#Bridge[title]:hover::after {
+#Bridge[data-title]:hover::after {
   margin-left: -24px;
 }
 
@@ -434,7 +434,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
         ><div id="figcaption" class="img-caption"><span id='banner-captext'>Relax your mind and body</span></div>
         
         <ul id="banner-imgList">
-            <li title="Relax your mind and body" id="Feather">
+            <li data-title="Relax your mind and body" id="Feather">
                 <div class="figure">
                     <img id='slide-0' src="img/slide-0.jpg" alt="Feather">
                     <div class="banner-infobox" id="banner-infobox-0">
@@ -448,7 +448,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Help the body to heal itself">
+            <li data-title="Help the body to heal itself">
                 <div class="figure">
                     <img id='slide-1' src="img/slide-1.jpg" alt="Tree">
                     <div class="banner-infobox" id="banner-infobox-1">
@@ -462,7 +462,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Alleviate back pain" id="Flowering-vine">
+            <li data-title="Alleviate back pain" id="Flowering-vine">
                 <div class="figure">
                     <img id='slide-2' src="img/slide-2.jpg" alt="Flowering vine">
                     <div class="banner-infobox" id="banner-infobox-2">
@@ -480,7 +480,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Strengthen mind-body connection" id="Lagoon">
+            <li data-title="Strengthen mind-body connection" id="Lagoon">
                 <div class="figure">
                     <img id='slide-3' src="img/slide-3.jpg" alt="Lagoon">
                     <div class="banner-infobox" id="banner-infobox-3">
@@ -503,7 +503,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Enhance athletic performance" id="Rocks">
+            <li data-title="Enhance athletic performance" id="Rocks">
                 <div class="figure">
                     <img id='slide-4' src="img/slide-4.jpg" alt="Rocks">
                     <div class="banner-infobox" id="banner-infobox-4">
@@ -526,7 +526,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                     </div>
                 </div>
             </li>
-            <li title="Repair overused muscles" id="Bridge">
+            <li data-title="Repair overused muscles" id="Bridge">
                 <div class="figure">
                     <img id='slide-5' src="img/slide-5.jpg" alt="Bridge">
                     <div class="banner-infobox" id="banner-infobox-5"
@@ -1072,8 +1072,8 @@ function createCycle(id, config) {
         for(var i = 0; i < len; i++) {
             img = bannerImgs[i];
             parent = img.parentNode;
-            caption = parent.parentNode.title || "";
-            debugger;
+            caption = parent.parentNode.getAttribute("data-title") || "";
+
             imgList[i] = { 
                 name : img.alt,
                 caption : caption,
