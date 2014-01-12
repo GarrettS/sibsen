@@ -139,7 +139,10 @@
 }
 
 li[data-title]::after {
-    opacity: 0;
+/* The selector itself seems to be necessary to get the 
+ fade-in to repeat. Adding a useless property just to be on 
+ the safe side. */
+    visibility: visible;
 }
 
 li[data-title]:hover::after {
