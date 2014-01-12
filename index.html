@@ -138,6 +138,10 @@
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80dfe4e6, endColorstr=#66dfe4e6, GradientType=0);
 }
 
+li[data-title]::after {
+    opacity: 0;
+}
+
 li[data-title]:hover::after {
   content: attr(data-title);
   padding: 3px 8px;
