@@ -1,5 +1,5 @@
  <!doctype html>
-<html>
+<html>`
 <head>
   <title>Sibsen</title>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
@@ -591,33 +591,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
 "use strict";
 
 (function() {
-var transitionSet = [{
-            "opacity" : 0.02,
-            "left" : '910px'
-        },
-        {
-            "opacity" : "0.2",
-            "width" : "1px",
-            "left" : "909px"
-        },
+var transitionSet = [ 
         {
             "opacity" : "0.2",
             "width" : "1px",
             "height" : "0px",
             'left' : '450px',
             'top' : '250px'
-        },
-        {
-            "width" : "2730px",
-            "height" : "1422px",
-            "opacity" : "0.01"
-        },
-        {
-            "opacity" : "0.2",
-            "width" : "1px",
-            "height" : "0px",
-            'left' : '900px',
-            'top' : '470px'
         },
         {
             "width" : "2730px",
@@ -950,7 +930,7 @@ function createCycle(id, config) {
             var i = transitionSet.length,
                 jsTransitionSet = new Array(i);
             while(i--) {
-                jsTransitionSet[i] = makeTransition(transitionSet[i]);
+                jsTransitionSet[i] = makeTransition(transitionSet[i%2]);
                 jsTransitionSet[i].onend = jsTransitionDoneDispatch;
             }
             return jsTransitionSet;
@@ -1069,7 +1049,7 @@ function createCycle(id, config) {
 
     function makeTransition(properties) {
         return new anim.StyleTransition(id + "-img", 
-                properties, 1, anim.Transitions.easeInEaseOut);
+                properties, 1.5, anim.Transitions.easeInEaseOut);
     }
     
     function getTransitionEvent() {
