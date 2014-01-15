@@ -930,7 +930,7 @@ function createCycle(id, config) {
             var i = transitionSet.length,
                 jsTransitionSet = new Array(i);
             while(i--) {
-                jsTransitionSet[i] = makeTransition(transitionSet[i%2]);
+                jsTransitionSet[i] = makeTransition(transitionSet[i]);
                 jsTransitionSet[i].onend = jsTransitionDoneDispatch;
             }
             return jsTransitionSet;
@@ -1032,7 +1032,7 @@ function createCycle(id, config) {
     }
     
     function transitionImg(index) {
-        var transitionToPerform = index;
+        var transitionToPerform = index % 2;
         
         transitionEnded = false;
         transitionEndEventFired = false;
@@ -1040,7 +1040,6 @@ function createCycle(id, config) {
         imageIndex.current = index;
         if(transitionEvent) {
             bannerImage.className = "slide slide-" + (transitionToPerform + 1);
-
         } else {
             jsTransition = jsTransitionSet[transitionToPerform];
             jsTransition.start();
