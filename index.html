@@ -11,15 +11,16 @@
     left: 0;
     top: 0;
     width: 910px;
-    opacity: 1;
+    opacity: 0.99;
     display: block;
     position: relative;
-    transition: 1s opacity;
 }
 
-#banner-img.alt {
-    opacity: 0;
-    transition: 1s opacity;
+#banner-img.fadeOut {
+    opacity: 0.01;
+    width: 1810px;
+    height: auto;
+    transition: 3s ease-out;
 }
 
 #banner-imgList>li > strong {
@@ -172,6 +173,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     padding: 0;
     left: 0;
     right: 0;
+    position: relative;
 }
 
 #banner-imgList>li {
@@ -214,8 +216,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     height: 360px;
     opacity: 0;
     position: absolute;
-    right: 6px;
-    top: 3px;
+    right: 3px;
+    top: -395px;
     line-height: 1.6em;
     padding-bottom: 8px;
     font-size: 14px;
@@ -521,30 +523,45 @@ var bannerImage = document.getElementById("banner-img");
 
 function makeLinkedList(array) {
     var current = 0;
-    return {
-        next: function(){ 
-            if(current === array.length) {
-                current = 0;
-            }
-            return array[current++];
+    array.next = function() {
+        if(current === array.length) {
+            current = 0;
         }
+        array.current = current;
+        return array[current++];
     };
+    return array;
 }
 
 var images = makeLinkedList([
     "./img/banner-sunset.jpg",
     "./img/banner-rock-ocean.jpg",
-    bannerImage.getAttribute("src")
+    bannerImage.getAttribute("src"),
 ]);
 
-transitionBannerImage()//setInterval(transitionBannerImage, 3000);
-function transitionBannerImage() {
-    bannerImage.parentNode.style.backgroundImage = 
-        "url('" + bannerImage.src + "')";
-    bannerImage.src = images.next();
-    bannerImage.style.opacity = 0;
-}
 
+var nextImage = images.next();
+bannerImage.parentNode.style.backgroundImage = 
+        "url('" + nextImage + "')";
+
+setTimeout(transitionBannerImage, 3000);
+
+function transitionBannerImage() {
+    bannerImage.className = "fadeOut";
+    var transitionEnded = false;
+    bannerImage.addEventListener("transitionend", function() {
+        if(transitionEnded) return;
+
+        this.className = "";
+        this.style.display = "none";
+        this.src = nextImage;
+        nextImage = images.next();
+        bannerImage.parentNode.style.backgroundImage = 
+           "url('" + nextImage + "')";
+        transitionEnded = true;
+        setTimeout(transitionBannerImage, 3000);
+    });
+}
 </script>
 </body>
 </html>
