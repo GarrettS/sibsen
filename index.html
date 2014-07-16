@@ -7,27 +7,30 @@
   <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
   <style type="text/css">
 #banner-img {
-    position: absolute;
     border: 0;
     left: 0;
     top: 0;
     width: 910px;
-    display: block !important;
+    opacity: 1;
+    display: block;
+    position: relative;
+    transition: 1s opacity;
 }
 
-#banner-imgList li > strong {
+#banner-img.alt {
+    opacity: 0;
+    transition: 1s opacity;
+}
+
+#banner-imgList>li > strong {
     display: block;
     z-index: 1;
     height: 20px;
     line-height: 18px;
     font-size: 17px;
     letter-spacing: .01em;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
     border-top: 1px solid rgba(127,146,153,.3);
-
+    margin-top: 5px;
     text-shadow: 0px 0px 3px rgba(200, 200, 242, 0.3), 
                 1px 1px .7px rgba(200, 200, 242, 0.7);
     background: -moz-linear-gradient(top, 
@@ -44,8 +47,8 @@
 }
 
 
-#banner-imgList li:hover > strong,
-#banner-imgList li.activeLi > strong {
+#banner-imgList>li:hover > strong,
+#banner-imgList>li.activeLi > strong {
     background: -moz-linear-gradient(top, 
         rgba(147,170,178,.45) 0%, 
         rgba(149,169,175,.45) 41%, 
@@ -54,18 +57,16 @@
     transition: .5s;
 }
 
-#banner-imgList li > strong > b {
+#banner-imgList>li > strong > b {
     background-color: rgba(215, 229, 233, 0.1);
 }
 
-#banner-imgList li > a:hover {
+#banner-imgList>li > a:hover {
 
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q3ZTVlOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQxJSIgc3RvcC1jb2xvcj0iIzliYmJjNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY1JSIgc3RvcC1jb2xvcj0iIzk1YTlhZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg2JSIgc3RvcC1jb2xvcj0iIzkzYWFiMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
 background: -moz-linear-gradient(top, rgba(215,229,233,.7) 0%, rgba(155,187,198,.7) 41%, rgba(149,169,175,.7) 65%, rgba(147,170,178,.7) 86%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(215,229,233,1)), color-stop(41%,rgba(155,187,198,1)), color-stop(65%,rgba(149,169,175,1)), color-stop(86%,rgba(147,170,178,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(215,229,233,1) 0%,rgba(155,187,198,1) 41%,rgba(149,169,175,1) 65%,rgba(147,170,178,1) 86%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(215,229,233,1) 0%,rgba(155,187,198,1) 41%,rgba(149,169,175,1) 65%,rgba(147,170,178,1) 86%); /* Opera 11.10+ */
+
 background: -ms-linear-gradient(top, rgba(215,229,233,1) 0%,rgba(155,187,198,1) 41%,rgba(149,169,175,1) 65%,rgba(147,170,178,1) 86%); /* IE10+ */
 background: linear-gradient(top, rgba(215,229,233,1) 0%,rgba(155,187,198,1) 41%,rgba(149,169,175,1) 65%,rgba(147,170,178,1) 86%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', endColorstr='#93aab2',GradientType=0 ); /* IE6-8 */
@@ -83,8 +84,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
 }
 
 #banner .slide {
-    -moz-transition: all 1.5s ;
-    -webkit-transition: all 1.5s;
     -ms-transition: all 1.5s;
     transition: all 1.5s;
 }
@@ -119,8 +118,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     font-size: 36px;
     text-shadow: rgba(39, 50, 54, .9) 0.08em 0.08em 0.1em,
                 rgba(215, 229, 233, 0.3) 3px 3px 5px;
-    /* Filter for old ID; no filter for IE9 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#11D7E5E9, endColorstr=#11D7E5E9);
     background: rgba(215, 229, 233, .05);
     padding: 3px 5px 9px 3px;
 }
@@ -170,16 +167,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
 }
 
 #banner-imgList {
-    position: absolute;
-    bottom: 0px;
-    padding: 0px;
-    margin: 0px;
+    margin: -77px 0 0 0px;
     width: 100%;
+    padding: 0;
     left: 0;
     right: 0;
 }
 
-#banner-imgList li {
+#banner-imgList>li {
     line-height: 0;
     display: inline-block;
     vertical-align: bottom;
@@ -192,7 +187,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     color: rgb(39, 50, 54);
     height: 75px;
 
-    position: relative;
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0DD7E5E9, endColorstr=#0DD7E5E9);
     background: rgba(215, 229, 233, .5);
     
@@ -200,14 +194,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     transition: background-color .4s ease-out;
 }
 
-#banner-imgList li:hover,
-#banner-imgList li.activeLI {
+#banner-imgList>li:hover,
+#banner-imgList>li.activeLI {
     background: rgba(215, 229, 233, .8);
     transition: .5s;
 }
 
 #banner-imgList img {
-    width: 66px;
+    height: 44px;
     display: block;
     margin: auto;
     visibility: visible;
@@ -219,20 +213,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     color: #111;
     height: 360px;
     opacity: 0;
-    position: absolute !important;
+    position: absolute;
     right: 6px;
-    top: -395px;
+    top: 3px;
     line-height: 1.6em;
     padding-bottom: 8px;
     font-size: 14px;
     width: 0;
-
+    overflow: hidden;
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZTFkOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 background: -moz-linear-gradient(top,  rgba(232,225,217,1) 10%, rgba(255,255,255, 0.2) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(232,225,217,1)), color-stop(100%,rgba(255,255,255, 0.2))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* Opera 11.10+ */
+
 background: -ms-linear-gradient(top,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* IE10+ */
 background: linear-gradient(to bottom,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e1d9', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
@@ -249,16 +241,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e1d9', end
     transition:  all 1s;
 }
 
+.banner-infobox li {
+    padding: 0;
+    margin: 11px 7px 4px 26px;
+}
+.banner-infobox ul {
+    padding: 0;
+    margin: 0;
+}
 
 .banner-infobox h3 {
     font-size: 14px;
     font-weight: 700;
-    margin: 0 8px 8px 8px;
+    margin: 9px 8px 8px;
     color: inherit;
     padding: 1px;
     white-space: nowrap;
     text-align: center;
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33e8e1d9, endColorstr=#33e8e1d9);
     background: rgba(232,225,217, .2);
 }
 
@@ -266,13 +265,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e1d9', end
     margin: 8px;
     font-size: 13px;
     line-height: 1.3;
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#12e8e1d9, endColorstr=#12e8e1d9);
     background: rgba(232,225,217, .08);
 }
 .shown-infobox {
     opacity: 1;
-    width: 214px;
-    
+    width: 274px;
+   
     -moz-transition: opacity 1.5s ease-out;
     -webkit-transition: opacity 1.5s ease-out;
     -o-transition: opacity 1.5s ease-out;
@@ -284,9 +282,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e1d9', end
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FhYjBiNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhYWIwYjciIHN0b3Atb3BhY2l0eT0iMC4yIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
 background: -moz-linear-gradient(top,  rgba(170,176,183,1) 0%, rgba(170,176,183,0.2) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(170,176,183,1)), color-stop(100%,rgba(170,176,183,0.2))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* Opera 11.10+ */
+
 background: -ms-linear-gradient(top,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* IE10+ */
 background: linear-gradient(to bottom,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aab0b7', endColorstr='#33aab0b7',GradientType=0 ); /* IE6-8 */
@@ -303,9 +299,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aab0b7', end
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI0MzkxMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 background: -moz-linear-gradient(top,  rgba(36,57,18,1) 0%, rgba(255,255,255,0) 150%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(36,57,18,1)), color-stop(150%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* Opera 11.10+ */
+
 background: -ms-linear-gradient(top,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* IE10+ */
 background: linear-gradient(to bottom,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
@@ -363,12 +357,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
 	    </li><li><a href="./services">Services</a> 
             </li><li><a href="./about">About Me</a>
             </li><li><a href="./contact">Contact</a> 
+            </li><li><a href="./thai-massage">Thai Massage</a> 
         </li></ul>
     </div>
   
     <div id="banner" 
-        ><div style="position: absolute; overflow: hidden;height: 474px; width: 910px"
-        ><img src="img/planterbox-above.jpg" alt="Relax your mind and body" id="banner-img"></div
+        ><div style="overflow: hidden;height: 474px; width: 910px"
+        ><img src="img/banner-green-grass.jpg" alt="Relax your mind and body" id="banner-img"></div
         ><div id="figcaption" class="img-caption"><span id='banner-captext'>Relax your mind and body</span></div>
         
         <ul id="banner-imgList">
@@ -392,13 +387,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                 <strong><b>Before Massage</b></strong>
                 <div class="figure">
                      <div class="banner-infobox" id="banner-infobox-1">
-                    <h3>Healing
+                    <h3>Before You Arrive
                     </h3>
-                    <p>
-                    <strong>Description:</strong> Thai massage can be used to focus on sports-related problems, 
-                    to increase resting muscle length, increase blood flow, attenuate 
-                    muscular imbalance, and even to increase bone mineral density.
-                    </p>
+                    <ul>
+                        <li>Try to arrive 5 minutes prior to your appointment time before your Thai Massage session. 
+                        <li>   Try not to eat 90 minutes before your Thai Massage session.
+                        <li>   Wear long, loose pants (even in the summer) that allow you to move (no shorts or nylon running pants).
+                        <li>   Bring a sweater or an overshirt for your comfort.
+                        <li>   If possible, download a client information form to fill out to bring with you on your first appointment.
+                    </ul>
                     </div>
                 </div>
             </li
@@ -446,38 +443,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                 </div>
             </li
             ><li data-title="Enhance athletic performance" id="Rocks">
-                <div class="figure">
-                    <img id='slide-4' src="img/icon1.jpg" alt="Rocks">
+                <img id='slide-4' src="img/icon1.jpg" alt="Rocks">
+                <strong><b>Testimonials</b></strong>
+            <div class="figure">
                     <div class="banner-infobox" id="banner-infobox-4">
-                        <h3>Deep Swedish &amp; Island</h3>
+                        <h3>Testamonials</h3>
+                        <span class="person">Kimberly A.</span>
                         <p>
-                            <strong>Description:</strong> Island Style massage is the Thai equivalent of Deep Swedish Massage.
-                        </p>
-                        <p>
-                            <strong>Benefits:</strong> Endorphin release, relaxation, circulation, 
-                            and healing. 
-                        </p>
-                        <p>
-                            <dfn>Thai Yoga Massage</dfn> and <dfn>Jop Sen</dfn> may also be 
-                            used to increase flexibility.
-                        </p>
-                        <p>
-                            <strong>Tip:</strong> Each sport uses different muscle groups. 
-                            For the best massage results, tell me how you use your body.
-                        </p>
+                            <a href="http://www.yelp.com/biz/hyde-street-wellness-cooperative-san-francisco#review_EZALo5uGk6VfwNLG2Q_cZw">Excellent deep tissue massage by Song. Owners have created a tranquil, lovely and super clean environment.
+                            I'm returning this weekend!</a>
+                       </p>
                     </div>
                 </div>
             </li>
         </ul>
     </div>
-    <p id="longdesc">
-        <dfn>Sibsen</dfn> refers to ten main energy lines in Thai masssage.
-        When the energy is stuck and the body is not working properly, discomfort and health 
-        problems ensue. Massage is used to address each individual's needs and problems,
-        helping to maintain optimal health, vitality, and happiness. It is another way
-        to understand and treat the mind and body.
-        Especially in our materialistic urban society, we need massage for life.
+    <div id="longdesc">
+        <strong>
+            The giving of massage was understood to be a physical application of Loving kindness and compassion.
+        </strong>
+        <p>
+        <dfn>Sibsen</dfn> refers to ten main energy lines in Thai masssage (Sib means “ten” and Sen means “lines”). Thai massage is based on an invisible energy lines running through the body. The 10 main energy lines  can refer as a life energy called Prana in yoga and meridian line in acupuncture.  When massaging these lines and points makes it possible to treat a whole rage of diseases or to relieve pain in the body. Disturbances in the flow of energy result in an insufficient supply of Prana, which will lead to sickness. Thai Massage is used to address each individual's needs and problems, helping to maintain optimal health, vitality, and happiness. It is another way to understand and treat the mind and body. Especially in our materialistic urban society, we need massage for life.
     </p>
+    </div>
     <!-- div id="footer">
         <a id="book" href="https://clients.mindbodyonline.com/ASP/home.asp?studioid=19428"  
                 >Book Song online</a>
@@ -488,45 +476,75 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
 
 <script>
 "use strict";
-setInterval(sibsenSlideShow, 4000);
 
-var activeLI;
+var activeLI, activeInfobox;
 var imgList = document.getElementById("banner-imgList");
 
 imgList.onclick = function(ev) {
     ev = ev || window.event;
-    var li,
-        target = ev.target || ev.srcElement;
-    if(target.tagName == "LI") {
-        li = target;
-    } else {
-        li = findAncestorWithTagName(target, "LI", this);
-    }
+    var target = ev.target || ev.srcElement,
+        li = findAncestorBySelector(target, "#banner-imgList > LI", this);
 
     if(li && li != activeLI) {
         li.className = "activeLI";
         if(activeLI) {
             activeLI.className = "";
+            activeInfobox.className = "banner-infobox";
         }
+        activeInfobox = li.querySelector(".banner-infobox");
+        activeInfobox.className += " shown-infobox";
         activeLI = li;
     }
 }
 
-function sibsenSlideShow() {
 
+var arrayIndexOf = Function.prototype.call.bind(Array.prototype.indexOf)
+function matchesSelector(el, selectorText, contextNode) {
+    var all = contextNode.querySelectorAll(selectorText);
+    return all && arrayIndexOf(all, el) != -1;
+    return false;
 }
 
-function findAncestorWithTagName(el, tn, container) {
+function findAncestorBySelector(el, selectorText, container) {
     if(el == null || el === container)
         return null;
-    for(var parent = el.parentNode;parent && parent != container && parent.tagName;){
-        if(parent.tagName == tn) {
+    for(var parent = el; parent && parent != container;) {
+        if(matchesSelector(parent, selectorText, container||document)) {
             return parent;
         }
         parent = parent.parentNode;
     }
     return null;
 }
+
+var bannerImage = document.getElementById("banner-img");
+
+function makeLinkedList(array) {
+    var current = 0;
+    return {
+        next: function(){ 
+            if(current === array.length) {
+                current = 0;
+            }
+            return array[current++];
+        }
+    };
+}
+
+var images = makeLinkedList([
+    "./img/banner-sunset.jpg",
+    "./img/banner-rock-ocean.jpg",
+    bannerImage.getAttribute("src")
+]);
+
+transitionBannerImage()//setInterval(transitionBannerImage, 3000);
+function transitionBannerImage() {
+    bannerImage.parentNode.style.backgroundImage = 
+        "url('" + bannerImage.src + "')";
+    bannerImage.src = images.next();
+    bannerImage.style.opacity = 0;
+}
+
 </script>
 </body>
 </html>
