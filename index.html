@@ -213,26 +213,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
 
 .banner-infobox {
     color: #111;
-    height: 360px;
+    height: 381px;
     opacity: 0;
     position: absolute;
-    right: 3px;
+    right: 2px;
     top: -395px;
-    line-height: 1.6em;
-    padding-bottom: 8px;
+    padding: 5px 4px 7px 4px;
     font-size: 14px;
     width: 0;
+    line-height: 1.4;
     overflow: hidden;
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZTFkOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-background: -moz-linear-gradient(top,  rgba(232,225,217,1) 10%, rgba(255,255,255, 0.2) 100%); /* FF3.6+ */
+background: -moz-linear-gradient(top,  rgba(232,225,217,.9) 40%, rgba(255,255,255, 0.35) 100%); /* FF3.6+ */
 
-background: -ms-linear-gradient(top,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(232,225,217,1) 10%,rgba(255,255,255, 0.2) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e1d9', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
+background: -ms-linear-gradient(top,  rgba(232,225,217,.9) 40%,rgba(255,255,255, 0.35) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(232,225,217,.9) 40%,rgba(255,255,255, 0.35) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', endColorstr='#44ffffff',GradientType=0 ); /* IE6-8 */
 
     white-space: normal;
-    line-height: 1.2em;
 
     text-align: left;
     
@@ -253,68 +252,57 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e1d9', end
 }
 
 .banner-infobox h3 {
+    /* prevent text wrap/jump when slide out */
+    width: inherit;
+    box-sizing: border-box;
     font-size: 14px;
     font-weight: 700;
-    margin: 9px 8px 8px;
+    margin: 5px 0;
+    padding: 3px 8px 1px 8px;
     color: inherit;
-    padding: 1px;
     white-space: nowrap;
     text-align: center;
-    background: rgba(232,225,217, .2);
 }
 
 .banner-infobox p {
-    margin: 8px;
+    /* prevent text wrap/jump when slide out */
+    width: inherit; 
+    box-sizing: border-box;
+
+    margin: 4px 0;
+    padding: 4px 5px;
     font-size: 13px;
     line-height: 1.3;
-    background: rgba(232,225,217, .08);
 }
+
+
+.banner-infobox * {
+/* Increase readability of fonts with shadow/gradient */
+    text-shadow: 0px 0px 3px rgba(232,225,217, .35), 
+                1px 1px .7px rgba(232,225,217, 0.1);
+    background: rgba(232,225,217, .08);
+        background: 
+        -webkit-radial-gradient(center, ellipse cover, 
+        rgba(232,225,217, .1) 30%,
+        rgba(232,225,217, .01) 99%);
+    background: 
+        -moz-radial-gradient(center, ellipse cover, 
+        rgba(232,225,217, .1) 30%,
+        rgba(232,225,217, .01) 99%);
+    background: 
+        radial-gradient(center, ellipse cover, 
+        rgba(232,225,217, .1) 30%,
+        rgba(232,225,217, .01) 99%);
+}
+
 .shown-infobox {
     opacity: 1;
-    width: 274px;
+    width: 298px;
    
-    -moz-transition: opacity 1.5s ease-out;
-    -webkit-transition: opacity 1.5s ease-out;
-    -o-transition: opacity 1.5s ease-out;
-    -ms-transition: opacity 1.5s ease-out;
-    transition: opacity 1.5s ease-out;
+    -ms-transition: opacity 1.5s ease-in;
+    transition: opacity 1.5s ease-in;
 }
 
-#banner-infobox-1 {
-/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FhYjBiNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhYWIwYjciIHN0b3Atb3BhY2l0eT0iMC4yIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-background: -moz-linear-gradient(top,  rgba(170,176,183,1) 0%, rgba(170,176,183,0.2) 100%); /* FF3.6+ */
-
-background: -ms-linear-gradient(top,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(170,176,183,1) 0%,rgba(170,176,183,0.2) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aab0b7', endColorstr='#33aab0b7',GradientType=0 ); /* IE6-8 */
-}
-
-#banner-infobox-1 h3 {
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#26aab0b7, endColorstr=#26aab0b7);
-    background: rgba(170,176,183, .15);
-
-}
-
-
-#banner-infobox-5 {
-/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI0MzkxMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-background: -moz-linear-gradient(top,  rgba(36,57,18,1) 0%, rgba(255,255,255,0) 150%); /* FF3.6+ */
-
-background: -ms-linear-gradient(top,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(36,57,18,1) 0%,rgba(255,255,255,0) 150%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
-    color: #e8d4c9;
-}
-
-#banner-infobox-5 h3 {
-    background: rgba(36,57,18,  .2);
-}
-
-#banner-infobox-5 p {
-    background: rgba(36,57,18,  .1);
-}
 </style>
 <!--[if gte IE 9]>
   <style type="text/css">
@@ -370,7 +358,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
         
         <ul id="banner-imgList">
             <li id="Feather">
-                <img id='slide-0' src="img/icon4.jpg" alt="Feather">
+                <img id='slide-0' src="img/t-1.jpg" alt="Feather">
                 <strong><b>Booking</b></strong>
                 <div class="figure">
                     <div class="banner-infobox" id="banner-infobox-0">
@@ -385,7 +373,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                 </div>
             </li
             ><li data-title="Help the body to heal itself">
-                <img id='slide-1' src="img/icon2.jpg" alt="Tree">
+                <img id='slide-1' src="img/t-2.jpg" alt="Tree">
                 <strong><b>Before Massage</b></strong>
                 <div class="figure">
                      <div class="banner-infobox" id="banner-infobox-1">
@@ -396,13 +384,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                         <li>   Try not to eat 90 minutes before your Thai Massage session.
                         <li>   Wear long, loose pants (even in the summer) that allow you to move (no shorts or nylon running pants).
                         <li>   Bring a sweater or an overshirt for your comfort.
-                        <li>   If possible, download a client information form to fill out to bring with you on your first appointment.
+                        <li>   If possible, download a 
+                            <ins>client information form</ins><big style='color: red'>Where??</big> to fill out to bring with you on your first appointment.
                     </ul>
                     </div>
                 </div>
             </li
             ><li data-title="Alleviate back pain" id="Flowering-vine">
-                <img id='slide-2' src="img/icon3.jpg" alt="Flowering vine">
+                <img id='slide-2' src="img/t-3.jpg" alt="Flowering vine">
                 <strong><b>After Massage</b></strong>
                 <div class="figure">
                     <div class="banner-infobox" id="banner-infobox-2">
@@ -421,35 +410,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
                 </div>
             </li
             ><li data-title="Strengthen mind-body connection" id="Lagoon">
-                <img id='slide-3' src="img/icon4.jpg" alt="Lagoon">
+                <img id='slide-3' src="img/t-4.jpg" alt="Lagoon">
                 <strong><b>Policy</b></strong>
                 <div class="figure">
                     <div class="banner-infobox" id="banner-infobox-3">
                     <h3>
-                        Jop Sen
+                        Cancellation Policy
                     </h3>
                     <p>
-                    <strong>Description:</strong> Stimulation of 
-                    therapeutic pressure points along energy lines  
-                    improves fine motor skills. 
-                    As the points are pushed, the client breathes and visualizes release 
-                    of the stuck areas. 
+                        If you’re unable to keep your appointment, Please contact me so that it can be made available to other clients who may be waiting. 
+                        24&nbsp;hour advance notice is required when cancelling an appointment.
                     </p>
+
+                    <h3>Late Arrivals</h3>
                     <p>
-                    Triggering these points can increase or decrease 
-                    energy flow to certain areas of the body and mind. This practice is a 
-                    great beginning to a massage, as it immediately relaxes the mind and 
-                    the rest of the body, opening it up for deeper work.
+                        If you arrive late, your session may be shortened in order to accommodate others whose appointments follow yours.
                     </p>
-                    </div>
+                    <h3>Contact Information</h3>
+                    <p>
+                        2800 Waiomao Rd, Honolulu Hawaii 96816 Tel: 808-227-3156
+                        E-mail: <a id="emailadd" href="">-</a>
+                    </p>
                 </div>
             </li
             ><li data-title="Enhance athletic performance" id="Rocks">
-                <img id='slide-4' src="img/icon1.jpg" alt="Rocks">
+                <img id='slide-4' src="img/t-5.jpg" alt="Rocks">
                 <strong><b>Testimonials</b></strong>
             <div class="figure">
                     <div class="banner-infobox" id="banner-infobox-4">
-                        <h3>Testamonials</h3>
+                        <h3>Testimonials</h3>
                         <span class="person">Kimberly A.</span>
                         <p>
                             <a href="http://www.yelp.com/biz/hyde-street-wellness-cooperative-san-francisco#review_EZALo5uGk6VfwNLG2Q_cZw">Excellent deep tissue massage by Song. Owners have created a tranquil, lovely and super clean environment.
@@ -465,7 +454,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#243912', end
             The giving of massage was understood to be a physical application of Loving kindness and compassion.
         </strong>
         <p>
-        <dfn>Sibsen</dfn> refers to ten main energy lines in Thai masssage (Sib means “ten” and Sen means “lines”). Thai massage is based on an invisible energy lines running through the body. The 10 main energy lines  can refer as a life energy called Prana in yoga and meridian line in acupuncture.  When massaging these lines and points makes it possible to treat a whole rage of diseases or to relieve pain in the body. Disturbances in the flow of energy result in an insufficient supply of Prana, which will lead to sickness. Thai Massage is used to address each individual's needs and problems, helping to maintain optimal health, vitality, and happiness. It is another way to understand and treat the mind and body. Especially in our materialistic urban society, we need massage for life.
+        <dfn>Sibsen</dfn> refers to ten main energy lines in Thai masssage (Sib means “ten” and Sen means “lines”). Thai massage is based on energy lines that run through the body. The ten main energy lines can be referred as life energy called <dfn>Prana</dfn> in yoga and meridian lines in acupuncture. Massaging these lines and points makes it possible to treat a whole rage of diseases or to relieve pain in the body. Disturbances in the flow of energy result in an insufficient supply of Prana, which will lead to sickness. Thai Massage is used to address each individual's needs and problems, helping to maintain optimal health, vitality, and happiness. It is another way to understand and treat the mind and body. Especially in our materialistic urban society, we need massage for life.
     </p>
     </div>
     <!-- div id="footer">
@@ -573,10 +562,20 @@ function flickerFreeImageSwap(img) {
 // XXX avoid flicker in Chrome.
     img.style.display = "none";
     img.src = nextImage;    
-    setTimeout(function(){
-        img.style.display="";
+    setTimeout(function() {
+        img.style.display = "";
         img = null;
     }, 99);
+}
+
+addEmailAddress();
+function addEmailAddress() {
+    var emailadd = document.getElementById("emailadd"),
+        value = "moc.liamg@egassamiahtnesbis".
+                split('').reverse().join('');
+
+    emailadd.firstChild.data = value;
+    emailadd.href = "mailto:" + value;
 }
 </script>
 </body>
