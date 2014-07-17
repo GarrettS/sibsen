@@ -527,8 +527,11 @@ function makeLinkedList(array) {
         if(current === array.length) {
             current = 0;
         }
-        array.current = current;
         return array[current++];
+    };
+
+    array.peek = function() {
+        return array[current === array.length ? 0 : current];
     };
     return array;
 }
@@ -536,6 +539,7 @@ function makeLinkedList(array) {
 var images = makeLinkedList([
     "./img/banner-sunset.jpg",
     "./img/banner-rock-ocean.jpg",
+    "./img/banner-tree-silhouette.jpg",
     bannerImage.getAttribute("src"),
 ]);
 
@@ -546,21 +550,33 @@ bannerImage.parentNode.style.backgroundImage =
 
 setTimeout(transitionBannerImage, 3000);
 
+var transitionEnded = false;
 function transitionBannerImage() {
     bannerImage.className = "fadeOut";
-    var transitionEnded = false;
-    bannerImage.addEventListener("transitionend", function() {
-        if(transitionEnded) return;
+    bannerImage.style.clip = "auto";
+    nextImage = images.next();
+    bannerImage.parentNode.style.backgroundImage = 
+       "url('" + nextImage + "')";
+   transitionEnded = false;
+}
 
-        this.className = "";
-        this.style.display = "none";
-        this.src = nextImage;
-        nextImage = images.next();
-        bannerImage.parentNode.style.backgroundImage = 
-           "url('" + nextImage + "')";
-        transitionEnded = true;
-        setTimeout(transitionBannerImage, 3000);
-    });
+bannerImage.addEventListener("transitionend", function() {
+    if(transitionEnded) return;
+    flickerFreeImageSwap(this);
+
+    this.className = "";
+    transitionEnded = true;
+    setTimeout(transitionBannerImage, 3000);
+});
+
+function flickerFreeImageSwap(img) {
+// XXX avoid flicker in Chrome.
+    img.style.display = "none";
+    img.src = nextImage;    
+    setTimeout(function(){
+        img.style.display="";
+        img = null;
+    }, 99);
 }
 </script>
 </body>
