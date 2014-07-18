@@ -18,7 +18,7 @@
 
 #banner-img.fadeOut {
     opacity: 0.01;
-    width: 1810px;
+    width: 1820px;
     height: auto;
     transition: 3s ease-out;
 }
@@ -26,12 +26,13 @@
 #banner-imgList>li > a > strong {
     display: block;
     z-index: 1;
-    height: 21px;
+    height: 20px;
     line-height: 18px;
-    font-size: 17px;
+    font-size: 15.4px;
+    font-weight: normal;
     letter-spacing: .01em;
     border-top: 1px solid rgba(127,146,153,.3);
-    margin-top: 5px;
+    margin-top: 3px;
     text-shadow: 0px 0px 3px rgba(200, 200, 242, 0.3), 
                 1px 1px .7px rgba(200, 200, 242, 0.7);
     background: -moz-linear-gradient(top, 
@@ -62,15 +63,6 @@
 #banner-imgList>li > a {
     text-decoration: none;
     display: block;
-}
-
-#banner-imgList>li > a:hover > strong,
-#banner-imgList>li.activeLi > a > strong {
-    transition: .5s;
-}
-
-#banner-imgList>li > strong > b {
-    background-color: rgba(215, 229, 233, 0.1);
 }
 
 /*#banner-imgList>li > a:hover*/ plaintext {
@@ -167,7 +159,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
 
 
 #banner-imgList {
-    margin: -77px 0 0 0px;
+    margin: -73px 0 0 0px;
     width: 100%;
     padding: 0;
     left: 0;
@@ -183,10 +175,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     white-space: nowrap;
     overflow: visible;
     text-align: center;
-    padding: 1px 0;
+    padding: 0;
     text-shadow: rgb(243, 243, 255, .9) 0.08em 0.08em 0.1em;
     color: rgb(39, 50, 54);
-    height: 75px;
+    height: 74px;
 
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0DD7E5E9, endColorstr=#0DD7E5E9);
     background: rgba(215, 229, 233, .5);
@@ -197,7 +189,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
 
 #banner-imgList li > a:hover > strong,
 #banner-imgList>li.activeLI > a > strong {
-    background: rgba(215, 229, 233, 0.5);
+    transition: .5s;
+    background: -moz-linear-gradient(top, 
+        rgba(147,170,178,.55) 0%, 
+        rgba(149,169,175,.55) 41%, 
+        rgba(155,187,198,.55) 65%, 
+        rgba(215,229,233,.55) 86%); /* FF3.6+ */
+    background: -webkit-linear-gradient(top, 
+        rgba(147,170,178,.55) 0%, 
+        rgba(149,169,175,.55) 41%, 
+        rgba(155,187,198,.55) 65%, 
+        rgba(215,229,233,.55) 86%); /* Chrome */
+
+    background: -ms-linear-gradient(top, 
+        rgba(147,170,178,.55) 0%, 
+        rgba(149,169,175,.55) 41%, 
+        rgba(155,187,198,.55) 65%, 
+        rgba(215,229,233,.55) 86%); 
+
+    background: linear-gradient(top, 
+        rgba(147,170,178,.55) 0%, 
+        rgba(149,169,175,.55) 41%, 
+        rgba(155,187,198,.55) 65%, 
+        rgba(215,229,233,.55) 86%);
 }
 
 #banner-imgList img {
@@ -206,16 +220,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     margin: auto;
     visibility: visible;
     border-radius: 10px;
-    margin-top: 3.5px;
+    margin-top: 3px;
 }
 
 .banner-infobox {
     color: #111;
-    height: 465px;
+    height: 469px;
     opacity: 0;
     position: absolute;
     right: 0px;
-    top: -485px;
+    top: -489px;
     padding: 5px 4px 7px 4px;
     font-size: 14px;
     width: 0;
@@ -302,7 +316,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
 }
 
 .shown-infobox {
-    opacity: .89;
+    opacity: .85;
     width: 347px;
    
     -ms-transition: opacity 1.5s ease-in;
@@ -399,7 +413,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
             <li id="Policy"
                 ><a href="#policy-infobox"
                     ><img id='slide-3' src="img/t-4.jpg" alt="Policy">
-                    <strong><b>Booking</b></strong>
+                    <strong>Booking</strong>
                 </a>
                 <div class="figure">
                     <div class="banner-infobox" id="policy-infobox">
@@ -425,7 +439,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
             </li
             ><li id="Before" data-title="Help the body to heal itself">
                 <a href="#before-massage-infobox"><img id='slide-1' src="img/t-2.jpg" alt="Tree">
-                <strong><b>Before Massage</b></strong>
+                <strong>Before Massage</strong>
                 </a>
                 <div class="figure">
                     <div class="banner-infobox" id="before-massage-infobox">
@@ -437,7 +451,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
                             <li>   Wear long, loose pants (even in the summer) that allow you to move (no shorts or nylon running pants).
                             <li>   Bring a sweater or an overshirt for your comfort.
                             <li>   If possible, download a 
-                                <ins>client information form <span style='color: red'>Where??</span></ins> to fill out to bring with you on your first appointment.
+                                <a href="img/clientinformation.gif">client information form</a> to fill out to bring with you on your first appointment.
                         </ul>
                         <h3>After the Session</h3>
                         <p>
@@ -449,22 +463,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
             ><li id="Sibsen"
                 ><a href="#sibsen-infobox"
                     ><img id='slide-2' src="img/t-3.jpg" alt="Flowering vine">
-                    <strong><b>Something Else</b></strong
+                    <strong>Something Else</strong
                 ></a
                 ><div class="figure"
                     ><div class="banner-infobox" id="sibsen-infobox">
                         <h3>Meditation</h3>
                         
+                        <blockquote>
+                            <pre>
+สวัสดีครับ
+
+ขอบคุณค่ะ
+
+ไม่เป็นไร
+
+นวดไทยสบายมาก
+</pre
+</blockquote>
                     </div>
                 </div>
             </li
             ><li id="Rocks">
                 <a href="#testimonials-infobox"
                     ><img id='slide-4' src="img/t-5.jpg" alt="Testimonials">
-                <strong><b>Testimonials</b></strong
+                <strong>Testimonials</strong
                 ></a>
                 <div class="figure">
-                    <div class="banner-infobox" id="testimonials-infobox" style="overflow: auto">
+                    <div class="banner-infobox" id="testimonials-infobox" style="overflow-y: auto">
                         <h3>Testimonials</h3>
                         <ul id="testimonials">
                             <li
@@ -514,7 +539,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
                 </div>
             </li><li id="News"
                 ><a href="#news-infobox"><img id='slide-0' src="img/t-1.jpg" alt="Feather"
-                ><strong><b>News</b></strong></a
+                ><strong>News</strong></a
                 ><div class="figure">
                     <div class="banner-infobox" id="news-infobox">
                         <h3>Relaxation</h3>
@@ -724,6 +749,9 @@ function initializeSibsen() {
     return initializeSibsen();
 }
 </script>
-<!-- wakemeup gaslamp-->
+<!-- wakemeup gaslamp
+
+800 288 2020
+-->
 </body>
 </html>
