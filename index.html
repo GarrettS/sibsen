@@ -165,51 +165,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     letter-spacing: -0.002em;
 }
 
-.figure {
-    display: block;
-    height: 8px;
-    background: inherit;
-    margin-top: -85.2px;
-    width: 0;
-    border-radius: 12px 0 0 0;
-    transition: all .2s;
-    background: linear-gradient(to right, 
-        rgba(215, 229, 233, 0.0) 0%,
-        rgba(215, 229, 233, 0.05) 100%);
-}
-
-.activeLI .figure {
-    background: linear-gradient(to right, 
-        rgba(215, 229, 233, 0.3) 0%,
-        rgba(215, 229, 233, 0.4) 1%,
-        rgba(215, 229, 233, 0.47) 2%,
-        rgba(215, 229, 233, 0.5) 100%);
-    -ms-transition: all 1s .1s;
-    transition: all 1.1s .1s ease;
-}
-
-#News.activeLI > .figure {
-    width: 555px;
-}
-
-
-#Before.activeLI > .figure {
-    width: 373px;
-}
-
-#Sibsen.activeLI > .figure {
-    width: 191px;
-}
-
-#Policy.activeLI > .figure {
-background: linear-gradient(to right, 
-        rgba(215, 229, 233, 0.3) 0%,
-        rgba(215, 229, 233, 0.5) 99%);
-            width: 9px;
-    transition-delay: .9s;
-    transition-timing: ease-in;
-    transition-duration: 1.25s;
-}
 
 #banner-imgList {
     margin: -77px 0 0 0px;
@@ -241,8 +196,8 @@ background: linear-gradient(to right,
 }
 
 #banner-imgList li > a:hover > strong,
-#banner-imgList>li.activeLI > a > strong{
-    background: rgba(215, 229, 233, .8);
+#banner-imgList>li.activeLI > a > strong {
+    background: rgba(215, 229, 233, 0.5);
 }
 
 #banner-imgList img {
@@ -256,7 +211,7 @@ background: linear-gradient(to right,
 
 .banner-infobox {
     color: #111;
-    height: 473px;
+    height: 465px;
     opacity: 0;
     position: absolute;
     right: 0px;
@@ -347,7 +302,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
 }
 
 .shown-infobox {
-    opacity: 1;
+    opacity: .89;
     width: 347px;
    
     -ms-transition: opacity 1.5s ease-in;
@@ -359,7 +314,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
 }
 
 #testimonials > li {
-    margin-top: 15px;
+    margin: 13px;
 }
 
 #testimonials > li > blockquote,
@@ -428,10 +383,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
     
     <div id="nav">
         <ul><li><a href="./index.html" class="current">Home</a>
-	    </li><li><a href="./services">Services</a> 
+            </li><li><a href="./thai-massage">Thai Massage</a> 
+    	    </li><li><a href="./services">Services</a> 
             </li><li><a href="./about">About Me</a>
             </li><li><a href="./contact">Contact</a> 
-            </li><li><a href="./thai-massage">Thai Massage</a> 
         </li></ul>
     </div>
   
@@ -441,55 +396,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
         ><div id="figcaption" class="img-caption"><span id='banner-captext'>Relax your mind and body</span></div>
         
         <ul id="banner-imgList">
-            <li id="News"
-                ><a href="#news-infobox"><img id='slide-0' src="img/t-1.jpg" alt="Feather"
-                ><strong><b>News</b></strong></a
-                ><div class="figure">
-                    <div class="banner-infobox" id="news-infobox">
-                        <h3>Relaxation</h3>
-                        <p>
-                          <strong>Style:</strong> Swedish or light Thai. 
-                        
-                        <p>This is the perfect massage if you're looking to unwind or relax attention, 
-                          decrease anxiety increase confidence. 
-                        </p>
-                    </div>
-                </div>
-            </li
-            ><li id="Before" data-title="Help the body to heal itself">
-                <a href="#before-massage-infobox"><img id='slide-1' src="img/t-2.jpg" alt="Tree">
-                <strong><b>Before Massage</b></strong>
-                </a>
-                <div class="figure">
-                    <div class="banner-infobox" id="before-massage-infobox">
-                    <h3>Before You Arrive
-                    </h3>
-                    <ul>
-                        <li>Try to arrive 5 minutes prior to your appointment time before your Thai Massage session. 
-                        <li>   Try not to eat 90 minutes before your Thai Massage session.
-                        <li>   Wear long, loose pants (even in the summer) that allow you to move (no shorts or nylon running pants).
-                        <li>   Bring a sweater or an overshirt for your comfort.
-                        <li>   If possible, download a 
-                            <ins>client information form <span style='color: red'>Where??</span></ins> to fill out to bring with you on your first appointment.
-                    </ul>
-                    </div>
-                </div>
-            </li
-            ><li id="Sibsen"
-                ><a href="#sibsen-infobox"
-                    ><img id='slide-2' src="img/t-3.jpg" alt="Flowering vine">
-                    <strong><b>Sibsen</b></strong
-                ></a
-                ><div class="figure"
-                    ><div class="banner-infobox" id="sibsen-infobox">
-                        <h3>Sibsen</h3>
-                        <p>
-                        Sibsen refers to ten main energy lines in Thai masssage (Sib means “ten” and Sen means “lines”). Thai massage is based on energy lines that run through the body. The ten main energy lines can be referred as life energy called Prana in yoga and meridian lines in acupuncture. Massaging these lines and points makes it possible to treat a whole rage of diseases or to relieve pain in the body. Disturbances in the flow of energy result in an insufficient supply of Prana, which will lead to sickness. Thai Massage is used to address each individual's needs and problems, helping to maintain optimal health, vitality, and happiness. It is another way to understand and treat the mind and body. Especially in our materialistic urban society, we need massage for life. 
-                        </p>
-                    </div>
-                </div>
-            </li
-            ><li id="Policy"
+            <li id="Policy"
                 ><a href="#policy-infobox"
                     ><img id='slide-3' src="img/t-4.jpg" alt="Policy">
                     <strong><b>Booking</b></strong>
@@ -513,6 +420,41 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
                             2800 Waiomao Rd, Honolulu Hawaii 96816 Tel: 808-227-3156
                             E-mail: <a id="emailadd" href="">-</a>
                         </p>
+                    </div>
+                </div>
+            </li
+            ><li id="Before" data-title="Help the body to heal itself">
+                <a href="#before-massage-infobox"><img id='slide-1' src="img/t-2.jpg" alt="Tree">
+                <strong><b>Before Massage</b></strong>
+                </a>
+                <div class="figure">
+                    <div class="banner-infobox" id="before-massage-infobox">
+                        <h3>Before You Arrive
+                        </h3>
+                        <ul>
+                            <li>Try to arrive 5 minutes prior to your appointment time before your Thai Massage session. 
+                            <li>   Try not to eat 90 minutes before your Thai Massage session.
+                            <li>   Wear long, loose pants (even in the summer) that allow you to move (no shorts or nylon running pants).
+                            <li>   Bring a sweater or an overshirt for your comfort.
+                            <li>   If possible, download a 
+                                <ins>client information form <span style='color: red'>Where??</span></ins> to fill out to bring with you on your first appointment.
+                        </ul>
+                        <h3>After the Session</h3>
+                        <p>
+                            We will take a few moments to check in about the session, and to see how you are feeling. Usually the next appointment is scheduled at that time, and then payment is rendered -  Cash, Check, or MasterCard/Visa are accepted. 
+                        </p>
+                    </div>
+                </div>
+            </li
+            ><li id="Sibsen"
+                ><a href="#sibsen-infobox"
+                    ><img id='slide-2' src="img/t-3.jpg" alt="Flowering vine">
+                    <strong><b>Something Else</b></strong
+                ></a
+                ><div class="figure"
+                    ><div class="banner-infobox" id="sibsen-infobox">
+                        <h3>Meditation</h3>
+                        
                     </div>
                 </div>
             </li
@@ -545,25 +487,47 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
                             <li
                                 ><blockquote
                                     ><p
-                                        ><a href="http://www.genbook.com/bookings/slot/reservation/30134154/192183495/reviews">The place is beautiful and Song gave me one of the best massages I have ever had. Cannot recommend highly enough and I have been having massages for over 35 years.</a
+                                        ><a href="http://www.genbook.com/bookings/slot/reservation/30134154/192183495/reviews">&hellip;Song gave me one of the best massages I have ever had. Cannot recommend highly enough and I have been having massages for over 35 years.</a
                                    ></p
                                ></blockquote>
                                 <span class="person">&mdash;tania e</span>
                             </li>
                             <li><blockquote
                                     ><p
-                                    ><a onclick="parentNode.parentNode.parentNode.parentNode.appendChild(parentNode.parentNode.parentNode.cloneNode(true));return false;"
-                                    href="http://www.yelp.com/biz/hyde-street-wellness-cooperative-san-francisco#review_MtEIXmRoYvqCkX65Ag7rpg">This place was amazing in every way and seriously, the best massage I have found yet. 
+                                    ><a 
+                                    href="http://www.yelp.com/biz/hyde-street-wellness-cooperative-san-francisco#review_MtEIXmRoYvqCkX65Ag7rpg">
                                     Song was so good that I feel scared to tell you about him in case you all book with him 
                                     forever, but I'm sure all of them are just as good :).</a></p
+                               ></blockquote>
+                               <span class="person">&mdash;Venetia P.</span>
+                            </li>
+                            <li><blockquote
+                                ><p
+                                ><a >Song's deep
+                               pressure massage...was exquisite. He knows nerves as well as muscles, and his demeanor and touch are 
+                               deeply calming.  Wow.</a></p
                                ></blockquote>
                                <span class="person">&mdash;Katherine C.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </li>
-        </ul>
+            </li><li id="News"
+                ><a href="#news-infobox"><img id='slide-0' src="img/t-1.jpg" alt="Feather"
+                ><strong><b>News</b></strong></a
+                ><div class="figure">
+                    <div class="banner-infobox" id="news-infobox">
+                        <h3>Relaxation</h3>
+                        <p>
+                          <strong>Style:</strong> Swedish or light Thai. 
+                        
+                        <p>This is the perfect massage if you're looking to unwind or relax attention, 
+                          decrease anxiety increase confidence. 
+                        </p>
+                    </div>
+                </div>
+            </li
+        ></ul>
     </div>
     <div id="longdesc">
         <strong>
@@ -622,7 +586,12 @@ function initializeSibsen() {
                     a = findAncestorBySelector(target, hrefSelector, this),
                     li = a && a.parentNode;
 
-                if(li && li != activeLI) {
+                if(!li) return false;
+
+                if(li === activeLI) {
+                    resetActiveInfobox();
+                    return false;
+                } else {
                     resetActiveInfobox();
                     var id = a.getAttribute('href').substring(1);
                     showInfobox(id);
@@ -755,5 +724,6 @@ function initializeSibsen() {
     return initializeSibsen();
 }
 </script>
+<!-- wakemeup gaslamp-->
 </body>
 </html>
