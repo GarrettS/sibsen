@@ -654,7 +654,6 @@ function initializeSibsen() {
         };
     }();
 
-
     function makeLinkedList(array) {
         var current = 0;
         array.next = function() {
@@ -695,15 +694,41 @@ function initializeSibsen() {
     function makeBannerTransition() {
         var bannerImage = document.getElementById("banner-img"),
             images = makeLinkedList([
-                "./img/banner-sunset.jpg",
-                "./img/banner-rock-ocean.jpg",
-                "./img/banner-tree-silhouette.jpg",
-                bannerImage.getAttribute("src"),
+                {
+                    alt: "Help the body to heal itself",
+                    src: "./img/banner-sunset.jpg"
+                },
+                {
+                    alt: "Help the body to heal itself",
+                    src: "./img/banner-rock-ocean.jpg"
+                },
+                {
+                    alt: "Help the body to heal itself",
+                    src: "./img/banner-tree-silhouette.jpg"
+                },
+                {
+                    alt: "Relax your mind and body",
+                    src: bannerImage.getAttribute("src")
+                }
             ]),
-            nextImage = images.next();
+            i,
+            nextImage;
+
+        for(i = 0; i < images.length; i++) {
+            images[i] = makeImage(images[i]);
+        }
+
+        function makeImage(config) {
+            var img = new Image();
+            img.src = config.src;
+            img.alt = config.alt;
+            return img;
+        }
+
+        nextImage = images.next();
 
         bannerImage.parentNode.style.backgroundImage = 
-                "url('" + nextImage + "')";
+                "url('" + nextImage.src + "')";
 
         setTimeout(transitionBannerImage, 3000);
 
@@ -713,13 +738,18 @@ function initializeSibsen() {
             bannerImage.style.clip = "auto";
             nextImage = images.next();
             bannerImage.parentNode.style.backgroundImage = 
-               "url('" + nextImage + "')";
+               "url('" + nextImage.src + "')";
+
+            var captext = document.getElementById("banner-captext");
+            captext.firstChild.data = nextImage.alt;
+
             transitionEnded = false;
         }
 
         bannerImage.addEventListener("transitionend", function() {
             if(transitionEnded) return;
             flickerFreeImageSwap(this);
+
 
             this.className = "";
             transitionEnded = true;
@@ -729,7 +759,7 @@ function initializeSibsen() {
         function flickerFreeImageSwap(img) {
         // XXX avoid flicker in Chrome.
             img.style.display = "none";
-            img.src = nextImage;    
+            img.src = nextImage.src;
             setTimeout(function() {
                 img.style.display = "";
                 img = null;
