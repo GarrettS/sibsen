@@ -90,7 +90,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     border-top: 1px solid #5E667A;
     margin: 0;
     padding: 0;
-    background: url("img/slide-1.jpg") no-repeat;
+    background: url("./img/banner-sunset.jpg") no-repeat;
     height: 562px;
     width: 910px;
 }
@@ -778,9 +778,6 @@ function initializeSibsen() {
         }
 
         nextImage = images.next();
-
-        bannerImage.parentNode.style.backgroundImage = 
-                "url('" + nextImage.src + "')";
 
         setTimeout(transitionBannerImage, 3000);
 
