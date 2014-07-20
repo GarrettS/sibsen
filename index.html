@@ -121,32 +121,50 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     display: block;
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0DD7E5E9, endColorstr=#0DD7E5E9).
         progid:DXImageTransform.Microsoft.Alpha(Opacity=90)
-    background: rgba(215, 229, 233, .05);
     opacity: .9;
     color: #f3f3ff;
     position: absolute;
-    top: 20px;
-    left: 25px;
+    top: 12px;
+    left: 22px;
     font-size: 34px;
-    text-shadow: rgba(39, 50, 54, .9) 0.08em 0.08em 0.1em,
-                rgba(215, 229, 233, 0.3) 3px 3px 5px;
-    background: rgba(215, 229, 233, .05);
-    padding: 3px 5px 9px 3px;
+    text-shadow: 
+        rgba(39, 50, 54, .3) 2.5px 2.5px 2px,
+        rgba(215, 229, 233, 0.4) 0px 0px 5px,
+        rgba(215, 229, 233, 0.02) 0px 0px 3px,
+        rgba(39, 50, 54, .9) 2px 2px 2px;
+
+    background: rgba(215, 229, 233, .027);
+
+    /* Where supported; smoother than abrupt background. */
+    background: -webkit-radial-gradient(center, ellipse cover, 
+        rgba(215, 229, 233, .05) 30%,
+        rgba(215, 229, 233, .005) 84%);
+    background: -moz-radial-gradient(center, ellipse cover, 
+        rgba(215, 229, 233, .05) 30%,
+        rgba(215, 229, 233, .005) 84%);
+    background: radial-gradient(center, ellipse cover, 
+        rgba(215, 229, 233, .05) 30%,
+        rgba(215, 229, 233, .005) 84%);
+
+    border-radius: 3px;
+    padding: 2px 3px 2px 3px;
 }
 
-#figcaption span {
-    -moz-transition: opacity 1.2s ;
-    -webkit-transition: opacity 1.2s;
-    -ms-transition: opacity 1.2s;
-    -o-transition: opacity 1.2s;
+#figcaption.fadeOut {
+    text-shadow: 
+        rgba(215, 229, 233, 0.02) 0px 0px 5px,
+        rgba(215, 229, 233, 0.02) 0px 0px 3px,
+        rgba(39, 50, 54, .1) 2px 2px 2px;
+    background: transparent;
+    opacity: .1;
+    -ms-transition: .05s;
+    transition: .05s;
 }
 
-#figcaption .faded {
-    opacity: 0.05;
-    -moz-transition: opacity .8s ;
-    -webkit-transition: opacity .8s;
-    -ms-transition: opacity .8s;
-    -o-transition: opacity .8s;
+#figcaption {
+    opacity: .99;
+    -ms-transition: .1s ease-in;
+    transition: .1s ease-in;
 }
 
 #longdesc {
@@ -191,6 +209,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     background: rgba(215, 229, 233, .5);
     
 
+    -ms-transition: background-color .4s ease-out;
     transition: background-color .4s ease-out;
 }
 
@@ -200,6 +219,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
 
 #banner-imgList li > a:hover > strong,
 #banner-imgList>li.activeLI > a > strong {
+    -ms-transition: .5s;
     transition: .5s;
     background: -moz-linear-gradient(top, 
         rgba(147,170,178,.55) 0%, 
@@ -423,7 +443,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
     <div id="banner" 
         ><div id="background-image"
         ><img src="img/banner-green-grass.jpg" alt="Relax your mind and body" id="banner-img"></div
-        ><div id="figcaption" class="img-caption"><span id='banner-captext'>Relax your mind and body</span></div>
+        ><div id="figcaption">Relax your mind and body</div>
         
         <ul id="banner-imgList">
             <li id="Policy"
@@ -449,6 +469,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
                         <p>
                             2800 Waiomao Rd, Honolulu Hawaii 96816 Tel: 808-227-3156
                             E-mail: <a id="emailadd" href="#">-</a>
+                        </p>
+                        <h3>Specials</h3>
+                        <p>
+                            50% off for your first time.
+                        </p>
+                        <p>
+                            If you refer someone &amp; they get a massage, 
+                            you'll receive 50% off your next session.
+                        </p>
+                        <p>
+                            Special 6 treatments get 1 free.
                         </p>
                     </div>
                 </div>
@@ -550,10 +581,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
                 ><strong>News</strong></a
                 ><div class="figure">
                     <div class="banner-infobox" id="news-infobox">
+                        <h3>News</h3>
                         <p>
-                          50% off for your first time
-If you refer someone &amp; they book, you'll receive 50% off your next session.
-Special 6 treatments get 1 free.
+                            50% off for your first time.
+                        </p>
+                        <p>
+                            If you refer someone &amp; they get a massage, 
+                            you'll receive 50% off your next session.
+                        </p>
+                        <p>
+                            Special 6 treatments get 1 free.
                         </p>
                     </div>
                 </div>
@@ -587,6 +624,9 @@ function initializeSibsen() {
 
     function initializeSibsen() {
         addEmailAddress();
+
+        if(!document.addEventListener) return;
+
         makeBannerTransition();
         infoPanelList.init();
         setInfoPanelFromHash();
@@ -749,12 +789,16 @@ function initializeSibsen() {
             bannerImage.parentNode.style.backgroundImage = 
                "url('" + nextImage.src + "')";
 
-            var captext = document.getElementById("banner-captext");
-            captext.firstChild.data = nextImage.alt;
-            captext.className = "fadeOut"
-
+            var captext = document.getElementById("figcaption");
+            captext.className = "fadeOut";
             transitionEnded = false;
         }
+
+        document.getElementById("figcaption").
+            addEventListener("transitionend", function fadeOut() {
+            this.firstChild.data = nextImage.alt;
+            this.className = "";
+        });
 
         bannerImage.addEventListener("transitionend", function() {
             if(transitionEnded) return;
