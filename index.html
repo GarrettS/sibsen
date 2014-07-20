@@ -79,8 +79,8 @@ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIH
 
 background: -moz-linear-gradient(top, rgba(215,229,233,.7) 0%, rgba(155,187,198,.7) 41%, rgba(149,169,175,.7) 65%, rgba(147,170,178,.7) 86%); /* FF3.6+ */
 
-background: -ms-linear-gradient(top, rgba(215,229,233,1) 0%,rgba(155,187,198,1) 41%,rgba(149,169,175,1) 65%,rgba(147,170,178,1) 86%); /* IE10+ */
-background: linear-gradient(top, rgba(215,229,233,1) 0%,rgba(155,187,198,1) 41%,rgba(149,169,175,1) 65%,rgba(147,170,178,1) 86%); /* W3C */
+background: -ms-linear-gradient(top, rgba(215,229,233,.7) 0%,rgba(155,187,198,.7) 41%,rgba(149,169,175,.7) 65%,rgba(147,170,178,.7) 86%); /* IE10+ */
+background: linear-gradient(top, rgba(215,229,233,.7) 0%,rgba(155,187,198,.7) 41%,rgba(149,169,175,.7) 65%,rgba(147,170,178,.7) 86%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', endColorstr='#93aab2',GradientType=0 ); /* IE6-8 */
 }
 
@@ -95,28 +95,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     width: 910px;
 }
 
-#banner .slide {
-    -ms-transition: all 1.5s;
-    transition: all 1.5s;
-}
-
-#banner .slide-1 {
-    opacity: 0.2;
-    width: 1px;
-    left: 909px;
-}
-
-#banner .slide-2 {
-    opacity: 0.05;
-    left: 910px;
-}
-
-#banner .slide-3 {
-    width: 2730px;
-    height: 1422px;
-    opacity: 0.01;
-}
-
 #figcaption {
     display: block;
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0DD7E5E9, endColorstr=#0DD7E5E9).
@@ -129,8 +107,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     font-size: 34px;
     text-shadow: 
         rgba(39, 50, 54, .3) 2.5px 2.5px 2px,
-        rgba(215, 229, 233, 0.4) 0px 0px 5px,
-        rgba(215, 229, 233, 0.02) 0px 0px 3px,
+        rgba(215, 229, 233, 0.5) 0px 0px 5px,
+        rgba(215, 229, 233, 0.1) 0px 0px 3px,
         rgba(39, 50, 54, .9) 2px 2px 2px;
 
     background: rgba(215, 229, 233, .027);
@@ -268,17 +246,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7e5e9', end
     overflow: hidden;
     border-radius: 0 0 0 17px;
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZTFkOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZTFkOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+) no-repeat;
 background: -moz-linear-gradient(top, 
-    rgba(232,225,217,.9) 40%,
-    rgba(215, 229, 233, 0.49) 95%); /* FF3.6+ */
+    rgba(232,225,217, .77) 40%,
+    rgba(215, 229, 233, 0.49) 95%,
+    rgba(215, 229, 233, 0.3) 100%); /* FF3.6+ */
 
 background: -ms-linear-gradient(top, 
-    rgba(232,225,217,.9) 40%,
-    rgba(215, 229, 233, 0.49) 95%); /* IE10+ */
+    rgba(232,225,217, .77) 40%,
+    rgba(215, 229, 233, 0.49) 95%,
+    rgba(215, 229, 233, 0.3) 100%)); /* IE10+ */
 background: linear-gradient(to bottom, 
-    rgba(232,225,217,.9) 40%,
-    rgba(215, 229, 233, 0.49) 95%); /* W3C */
+    rgba(232,225,217, .77) 40%,
+    rgba(215, 229, 233, 0.49) 95%,
+    rgba(215, 229, 233, 0.3) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', endColorstr='#44ffffff',GradientType=0 ); /* IE6-8 */
 
     white-space: normal;
@@ -286,7 +267,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
     text-align: left;
     
     -ms-transition: all 1s;
-    transition:  all 1s;
+    transition: all 1s;
 }
 
 .banner-infobox li {
@@ -330,25 +311,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
 
 .banner-infobox * {
 /* Increase readability of fonts with shadow/gradient */
-    text-shadow: 0px 0px 3px rgba(232,225,217, .35), 
-                1px 1px .7px rgba(232,225,217, 0.1);
+    text-shadow: 0px 0px 4px rgba(232,225,217, .15),
+                1px 1px 1px rgba(232,225,217, 0.2),
+                0px 0px 3px rgba(232,225,217, .27),
+                .5px .5px .4px rgba(232,225,217, 0.3);
     background: rgba(232,225,217, .08);
         background: 
         -webkit-radial-gradient(center, ellipse cover, 
         rgba(232,225,217, .1) 30%,
-        rgba(232,225,217, .01) 99%);
+        rgba(232,225,217, .01) 90%);
     background: 
         -moz-radial-gradient(center, ellipse cover, 
         rgba(232,225,217, .1) 30%,
-        rgba(232,225,217, .01) 99%);
+        rgba(232,225,217, .01) 90%);
     background: 
         radial-gradient(center, ellipse cover, 
         rgba(232,225,217, .1) 30%,
-        rgba(232,225,217, .01) 99%);
+        rgba(232,225,217, .01) 90%);
 }
 
 .shown-infobox {
-    opacity: .85;
+    opacity: .91;
     width: 335px;
    
     -ms-transition: opacity 1.5s ease-in;
@@ -364,7 +347,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
 }
 
 .person {
-    font-size: 12px;
+    font-size: 11.7px;
 }
 
 #testimonials > li > blockquote,
