@@ -104,12 +104,12 @@ h3 {
     font-weight: 400;
 }
 
-#nav,  #book {
+#nav, #book {
     margin: 0;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    padding: 0 2px 0 2px;
+    padding: 0 4px 0 2px;
     background: rgb(215,229,233); /* Old browsers */
 }
 
@@ -130,6 +130,18 @@ h3 {
     padding: 0.6ex 2.5ex;
     text-decoration: none;
     color: #273236;
+}
+
+#nav > a {
+    border-radius: 9px;
+    height: 18px;
+    width: 18px;
+    padding: 1px 5px;
+    margin-top: 3.5px;
+}
+
+#nav > a > img {
+    border: 0;
 }
 
 #nav {
