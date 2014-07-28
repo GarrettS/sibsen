@@ -19,16 +19,30 @@ ins {
     font-weight: bold;
     color: #000;
     font-size: 16px;
-    clear: both;
 }
 
-#services-page img { 
+figure.massage-type {
+    margin: 12px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+figure.massage-type figcaption {
+    background: #f3f3f3;
+    font-size: 75%;
+    padding: 0 1px 3px 1px;
+}
+
+figure#ashiatsu-figure {
     float: left;
-    margin: 0 1.1em 1.1em 0;
+}
+
+img#ashiatsu {
+    height: 117px;
+    width: 176px;
 }
 
 #services-page dt {
-    clear: both;
 }
 </style>
 </head>
@@ -68,12 +82,18 @@ ins {
 </p>
 <h3>Island Massage / Ashiatsu</h3>
 	<p>
-        <img src="ashiatsu.jpg">
 		The client lies face-down. 
 		Coconut oil or lotion is generously applied to the client's back.  
         The therapist uses foot pressure, mostly focusing on the back and hand pressure where needed.
 </p>
-<p>Island Style massage achieves many of the benefits of deep tissue massage while retaining the relaxing effect of a Swedish massage. 
+    <figure class="massage-type" id="ashiatsu-figure">
+        <img id="ashiatsu" alt="Ashiatsu in practice" src="ashiatsu.jpg">
+        <figcaption>
+            Island Massage / Ashiatsu
+        </figcaption>
+    </figure>
+<p>
+    Island Style massage achieves many of the benefits of deep tissue massage while retaining the relaxing effect of a Swedish massage. 
 	</p>
 
 <h3>Jop Sen</h3>

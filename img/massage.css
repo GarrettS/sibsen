@@ -69,6 +69,14 @@ article {
     margin: 12px;
 }
 
+figure {
+    display: block;
+}
+
+figcaption {
+    text-align: center;
+}
+
 dfn {
     font-style: italic;
 }
