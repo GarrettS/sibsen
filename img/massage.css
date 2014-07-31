@@ -56,9 +56,9 @@ a, #nav span {
 
 h1 {
     font-family: Dancing Script, Papyrus;
-    font-weight: 500;
+    font-weight: 600;
     text-align: left;
-    font-size: 60px;
+    font-size: 52px;
     line-height: 1;
     margin: -19px 0 -19px 17px;
     padding: 0 0 4px;
@@ -82,7 +82,7 @@ dfn {
 }
 
 #tagline {
-    margin: -12px 423px 3px 0;
+    margin: -12px 430px 3px 0;
     float: right;
     width: 277px;
     font-family: Dancing Script, Papyrus;
@@ -171,20 +171,21 @@ h3 {
     font-size: 12px;
 }
 
-#header {
+#header, header {
     position: relative;
 }
 
 #contact-header {
     position: absolute;
-    right: 0;
-    font-size: 12px;
+    right: 4px;
+    font-size: 11px;
     bottom: 4px;
 }
 
 #contact-header > div {
     margin-bottom: 5px;
-    padding: 3px 5px 3px 5px;
+    padding: 2px 4px 2px 4px;
+    border-radius: 5px;
     background: rgb(215, 229, 233);
 }
 
