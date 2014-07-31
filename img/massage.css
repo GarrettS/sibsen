@@ -58,7 +58,7 @@ h1 {
     font-family: Dancing Script, Papyrus;
     font-weight: 500;
     text-align: left;
-    font-size: 52px;
+    font-size: 60px;
     line-height: 1;
     margin: -19px 0 -19px 17px;
     padding: 0 0 4px;
@@ -82,7 +82,7 @@ dfn {
 }
 
 #tagline {
-    margin: -12px 433px 3px 0;
+    margin: -12px 423px 3px 0;
     float: right;
     width: 277px;
     font-family: Dancing Script, Papyrus;
@@ -169,6 +169,23 @@ h3 {
 #nav > .book-link, #nav strong {
     margin-bottom: 1px;
     font-size: 12px;
+}
+
+#header {
+    position: relative;
+}
+
+#contact-header {
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    bottom: 4px;
+}
+
+#contact-header > div {
+    margin-bottom: 5px;
+    padding: 3px 5px 3px 5px;
+    background: rgb(215, 229, 233);
 }
 
 .book-link {
