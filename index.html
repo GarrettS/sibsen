@@ -826,6 +826,10 @@ function initializeSibsen() {
             images[i] = makeImage(images[i]);
         }
 
+        images[images.length-1].onload = function() {
+            setTimeout(transitionBannerImage, 2000);
+        };
+
         function makeImage(config) {
             var img = new Image();
             img.src = config.src;
@@ -835,7 +839,6 @@ function initializeSibsen() {
 
         nextImage = images.next();
 
-        setTimeout(transitionBannerImage, 3000);
 
         var transitionEnded = false;
         function transitionBannerImage() {
