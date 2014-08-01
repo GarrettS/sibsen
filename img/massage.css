@@ -226,6 +226,14 @@ h3 {
     min-height: 519px;
     font-size: 17px;
 }
+p a{
+    color: rgba(13, 100, 129, 0.89);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+
 
 #nav li { 
     float: left;
