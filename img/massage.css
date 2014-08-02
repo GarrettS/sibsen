@@ -7,6 +7,24 @@
   local('Dancing Script'), url('dancing-script.woff') format('woff');
 }
 
+/* ipad mini */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 1),
+
+/* iphone 5 */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) { 
+    h1>a {
+        font-size: 45px !important;
+    }
+    p#tagline {
+        margin: -12px 442px 3px 0;
+    }
+}
+
 ::-moz-selection {
   background-color: rgba(215, 229, 233, .6);
   color: #202c30;
