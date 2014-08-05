@@ -243,8 +243,10 @@ h3 {
     padding-top: 1em;
     width: 910px;
     min-height: 519px;
-    font-size: 17px;
+    font-size: 17px !important;
+    -webkit-text-size-adjust: none;
 }
+
 p a{
     color: rgba(13, 100, 129, 0.89);
     text-decoration: none;
