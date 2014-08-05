@@ -22,7 +22,7 @@
   background: #fff;
   padding: 12px;
   margin-top: 14px;
-  overflow-y: auto;
+  overflow-y: hidden;
   height: 558px;
   position: relative;
 }
@@ -283,7 +283,7 @@ h2 abbr {
   var reviews = document.getElementById("reviews");
   var reviewsMore = document.getElementById("reviews-more");
   reviewsMore.onclick = function() {
-    reviews.style.height = "100%";
+    reviews.style.overflowY = "scroll";
   }
 
 })()
