@@ -24,13 +24,21 @@
   margin-top: 14px;
   overflow-y: auto;
   height: 558px;
+  position: relative;
 }
 
 #reviews a {
   text-decoration: none;
   font-weight: normal;
   color: #000;
-  font-size: .8em;
+}
+
+#reviews-more {
+  border: 1px solid #ccc;
+  background: #eee;
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
 }
 
 #reviews a:hover {
@@ -260,6 +268,7 @@ h2 abbr {
            </p>
         </div>
     </div>
+    <div id="reviews-more">more reviews</div>
 
     <footer>
   <!-- <a class="book-link" href="/#policy-infobox"  
@@ -269,5 +278,15 @@ h2 abbr {
       <strong>In shop</strong>: (808) 292-8229 (Eaton Square)
     </footer>
 </div>
+<script>
+(function(){
+  var reviews = document.getElementById("reviews");
+  var reviewsMore = document.getElementById("reviews-more");
+  reviewsMore.onclick = function() {
+    reviews.style.height = "100%";
+  }
+
+})()
+</script>
 </body>
 </html>
