@@ -435,8 +435,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
 
         <!--a class="book-link" href="https://clients.mindbodyonline.com/ASP/home.asp?studioid=19428">Book Song online</a--> 
 
-        <a href="http://sibsen.setmore.com/"  
-        >Book</a>
+        <a class="book" href="http://sibsen.setmore.com/"  
+        >Book now</a>
 
         <a class="social-icon" title="Follow on Twitter for info, updates &amp; specials!"
           href="https://twitter.com/sibsenthaimassa"
@@ -636,7 +636,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e8e1d9', e
                             (808) 227-3156
                         </p>
 
-                        <p>Download a <a href="img/intakeform.jpg">client information form</a> (optional).
+                        <p>Download a <a href="img/intakeform.jpg" target="_blank">client information form</a> (optional).
                     </div>
                 </div>
             </li
@@ -701,7 +701,7 @@ function initializeSibsen() {
                     a = findAncestorBySelector(target, hrefSelector, this),
                     li = a && a.parentNode;
 
-                if(!li) return false;
+                if(!li) return;
 
                 if(li === activeLI) {
                     resetActiveInfobox();
@@ -710,8 +710,8 @@ function initializeSibsen() {
                     resetActiveInfobox();
                     var id = a.getAttribute('href').substring(1);
                     showInfobox(id);
+                    return false;
                 }
-                return false;
             };
         }
 

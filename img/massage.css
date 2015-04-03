@@ -140,6 +140,22 @@ h3 {
     background: rgb(215,229,233); /* Old browsers */
 }
 
+#nav>a.book, #nav>a.book:hover {
+    top: -3.5px;
+    position: relative;
+    border-radius: 6px;
+    background-color: rgba(0, 98, 152, 0.8);
+    margin-bottom: 0px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    padding: .3px 3px .2px 3px;
+    width: auto;
+}
+
+#nav>a.book:hover {
+    box-shadow: -4px 0px .5px .2px rgb(215, 229, 233), 4px 0px .5px .2px rgb(215, 229, 233);
+}
+
 #nav ul {
     margin: 0;
     padding: 0;
