@@ -24,6 +24,10 @@ h3 img {
   system: numeric;
 }
 
+.address {
+  margin-top: 0;
+}
+
 #directions-list {
   list-style: none;
   margin: auto;
@@ -140,22 +144,31 @@ figcaption {
     </div>
 
 <h2>Contact Me</h2>
-
-<h3>Location 
-  (<a 
-href="https://www.google.com/maps/place/2801+La-'i+Rd,+Honolulu,+HI+96816/@21.3009868,-157.790253,15z/data=!4m5!3m4!1s0x7c006d20cfd63ff5:0x1141d85e14eb7985!8m2!3d21.316216!4d-157.78007"
->map</a>)</h3>
-<p class="address">
-2801 La-i Rd. Apt N2 <br>
-Honolulu HI 96816<br>
-(808) 227-3156
-</p>
-
-<h4>Directions</h4>
-<p>From Waikiki: 15-25 min (depends on traffic).</p>
-<p>Waialae to La-i rd: 5 min.</p>
-<p>Take 10th Ave or Palolo Ave. to La-i Rd.</p>
-<p>8 min from 10th and La-i.</p>
+<div style="display: flex">
+  <div>
+    <h3>Location 
+      (<a 
+    href="https://www.google.com/maps/place/2801+La-'i+Rd,+Honolulu,+HI+96816/@21.3009868,-157.790253,15z/data=!4m5!3m4!1s0x7c006d20cfd63ff5:0x1141d85e14eb7985!8m2!3d21.316216!4d-157.78007"
+    >map</a>)</h3>
+    <p class="address">
+    2801 La-i Rd. Apt N2 <br>
+    Honolulu HI 96816<br>
+    (808) 227-3156
+    </p>
+  </div>
+  <div style="margin-left: 20px">
+    <h3>Directions</h3>
+    <ul style="margin-top: 0;">
+      <li>From Waikiki: 15-25 min (depends on traffic).
+      <li>Waialae to La-i rd: 5 min.
+      <li>Take 10th Ave or Palolo Ave. to La-i Rd.
+      <li>8 min from 10th and La-i.
+    </ul>
+  </div>
+  <div style="margin-left: 20px">
+    <h3>Outcall: At your place.</h3>
+  </div>
+</div>
 
 <ol id="directions-list">
 
@@ -208,10 +221,6 @@ Honolulu HI 96816<br>
   </figure>
 </ol>
 
-<h3>Outcall: At your place.</h3>
-<p>
-(808) 227-3156
-</p>
  <footer>
 <!-- <a class="book-link" href="/#policy-infobox"  
         >Policy</a>  --><strong>Call </strong> 
