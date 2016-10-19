@@ -19,6 +19,94 @@ h3 img {
     height: 1.2em;
     margin: -2px 3px 0 -1px;
 }
+
+@counter-style dcounter {
+  system: numeric;
+}
+
+#directions-list {
+  list-style: none;
+  margin: auto;
+  padding: 2px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  counter-reset: dcounter;
+}
+
+#directions-list li {
+  float: left;
+  margin: 0;
+  padding: 3px;
+}
+
+#directions-list figcaption::before {
+  content: counter(dcounter, decimal);
+  counter-increment: dcounter;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  background: rgba(39, 50, 54, .77);
+  text-shadow: 
+        rgba(39, 50, 54, .3) 2.5px 2.5px 2px,
+        rgba(215, 229, 233, 0.5) 0px 0px 5px,
+        rgba(215, 229, 233, 0.1) 0px 0px 3px,
+        rgba(39, 50, 54, .9) 2px 2px 2px;
+  border-radius: 11px;
+  height: 22px;
+  width: 22px;
+  padding-top: 1.5px;
+  display: inline-block;
+  font-size: 16px;
+  display: inline-block;
+  float: left;
+  display: block;
+  border: none;
+}
+
+figure {
+  position: relative;
+}
+figure > img {
+  display: block;
+  margin: 0;
+}
+figure, figcaption {
+  padding: 0;
+  margin: 0;
+}
+
+figcaption {
+  font-weight: 200;
+  letter-spacing: .01em;
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  bottom: .2em;
+  width: 100%;
+  text-align: center;
+  text-shadow: 
+        rgba(39, 50, 54, .3) 2px 2px 1.7px,
+        rgba(215, 229, 233, 0.5) 0px 0px 4px,
+        rgba(215, 229, 233, 0.1) 0px 0px 2.7px,
+        rgba(39, 50, 54, .9) 1.6px 1.6px 1.6px;
+  background: rgba(215, 229, 233, .027);
+
+  /* Where supported; smoother than abrupt background. */
+  background: -webkit-radial-gradient(center, ellipse cover, 
+      rgba(215, 229, 233, .15) 30%,
+      rgba(215, 229, 233, .015) 84%);
+  background: -moz-radial-gradient(center, ellipse cover, 
+      rgba(215, 229, 233, .15) 30%,
+      rgba(215, 229, 233, .015) 84%);
+  background: radial-gradient(center, ellipse cover, 
+      rgba(115, 229, 233, .15) 30%,
+      rgba(115, 229, 233, .025) 84%);
+
+  border-bottom: 1px solid rgba(39, 50, 54, .3);
+  border-radius: 3px;
+  display: block;
+}
 </style>
 </head>
 <body>
@@ -55,7 +143,7 @@ h3 img {
 
 <h3>Location 
   (<a 
-href="http://www.openstreetmap.org/?bbox=-157.78570564374,21.309327747764,-157.78560564374,21.309427747764"
+href="https://www.google.com/maps/place/2801+La-'i+Rd,+Honolulu,+HI+96816/@21.3009868,-157.790253,15z/data=!4m5!3m4!1s0x7c006d20cfd63ff5:0x1141d85e14eb7985!8m2!3d21.316216!4d-157.78007"
 >map</a>)</h3>
 <p class="address">
 2801 La-i Rd. Apt N2 <br>
@@ -63,6 +151,62 @@ Honolulu HI 96816<br>
 (808) 227-3156
 </p>
 
+<h4>Directions</h4>
+<p>From Waikiki: 15-25 min (depends on traffic).</p>
+<p>Waialae to La-i rd: 5 min.</p>
+<p>Take 10th Ave or Palolo Ave. to La-i Rd.</p>
+<p>8 min from 10th and La-i.</p>
+
+<ol id="directions-list">
+
+  <li style="height: 165px"><figure><img src="img/google-map-line.png" width="293">
+    <figcaption style="display:none">
+      Map from Waikiki
+    </figcaption>
+  </figure>
+  <li><figure><img src="img/la-i-road.jpg" width="293">
+    <figcaption>
+      Turn from 10th Ave. to La-i Rd.
+    </figcaption>
+  </figure>
+  <li><figure><img src="img/mailbox.jpg" width="293">
+    <figcaption>
+      Turn right at the mailbox
+    </figcaption>
+  </figure>
+  <li><figure><img src="img/coconut-1.jpg" width="293">
+    <figcaption>
+      Turn right at this coconut tree
+    </figcaption>
+  </figure>
+
+  <li><figure><img src="img/going-straight.jpg" width="293">
+    <figcaption>
+      Keep going straight
+    </figcaption>
+  </figure>
+  <li><figure><img src="img/main-gate.jpg" width="293">
+    <figcaption>
+      Call to unlock gate <small>(808) 227-3156</small>
+    </figcaption>
+  </figure>
+  <li><figure><img src="img/keep-left.jpg" width="293">
+    <figcaption>
+      Keep left
+    </figcaption>
+  </figure>
+
+  <li><figure><img src="img/destination.jpg" width="293">
+    <figcaption>
+      Turn left
+    </figcaption>
+  </figure>
+  <li><figure><img src="img/parking.jpg" width="293">
+    <figcaption>
+      Park here!
+    </figcaption>
+  </figure>
+</ol>
 
 <h3>Outcall: At your place.</h3>
 <p>
